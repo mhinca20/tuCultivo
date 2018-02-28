@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# tuCultivo
+proyecto integrador 2
+>>>>>>> 6070d52385e9f342a111d9cbb5fa69d3772dd200
