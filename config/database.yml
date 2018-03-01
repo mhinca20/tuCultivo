@@ -5,12 +5,13 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
+  adapter: sqlite3
   database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
@@ -18,8 +19,13 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: tuCultivo_test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  database: tuCultivo_production
+  username: tuCultivo
+  password: <%= ENV['TUCULTIVO_DATABASE_PASSWORD'] %>
