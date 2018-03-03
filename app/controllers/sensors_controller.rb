@@ -1,4 +1,5 @@
 class SensorsController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_sensor, only: [:show, :edit, :update, :destroy]
 
   # GET /sensors
@@ -61,6 +62,11 @@ class SensorsController < ApplicationController
     end
   end
 
+  # POST /sensors/id
+  def create_value
+    @value = Value.create(value_params)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_sensor
@@ -70,5 +76,9 @@ class SensorsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def sensor_params
       params.require(:sensor).permit(:name, :node_id)
+    end
+
+    def value_params
+      params.require(:sensor).permit(:sensor_id,:value)
     end
 end

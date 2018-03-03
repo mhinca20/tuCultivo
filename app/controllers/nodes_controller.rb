@@ -1,4 +1,5 @@
 class NodesController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_node, only: [:show, :edit, :update, :destroy]
 
   # GET /nodes
