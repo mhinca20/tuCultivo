@@ -1,16 +1,18 @@
 class NodesController < ApplicationController
   protect_from_forgery with: :null_session
+  before_action :authenticate_user!
   before_action :set_node, only: [:show, :edit, :update, :destroy]
 
   # GET /nodes
   # GET /nodes.json
   def index
-    @nodes = Node.all
+    @nodes = current_user.nodes
   end
 
   # GET /nodes/1
   # GET /nodes/1.json
   def show
+    @sensors = @node.sensors
   end
 
   # GET /nodes/new
@@ -25,10 +27,10 @@ class NodesController < ApplicationController
   # POST /nodes
   # POST /nodes.json
   def create
-    @node = Node.new(node_params)
+    @node = current_user.nodes.create(node_params)
 
     respond_to do |format|
-      if @node.save
+      if @node.persisted?
         format.html { redirect_to @node, notice: 'Node was successfully created.' }
         format.json { render :show, status: :created, location: @node }
       else
@@ -70,6 +72,6 @@ class NodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def node_params
-      params.require(:node).permit(:name)
+      params.require(:node).permit(:name,:reference)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180301182348) do
+ActiveRecord::Schema.define(version: 20180310151801) do
 
   create_table "collaborations", force: :cascade do |t|
     t.integer "node_id"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20180301182348) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "reference"
   end
 
   create_table "sensors", force: :cascade do |t|
