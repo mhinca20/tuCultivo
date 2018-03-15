@@ -81,4 +81,8 @@ class SensorsController < ApplicationController
     def value_params
       params.require(:sensor).permit(:sensor_id,:value)
     end
+
+    def values
+      @values = @sensor.values
+    end
 end

@@ -16,7 +16,7 @@
       <tr>
         <td><%= sensor.name %></td>
         <td><%= sensor.node %></td>
-        <td><%= link_to 'Show', sensor %></td>
+        <td><%= link_to 'Show', values_path %></td>
         <td><%= link_to 'Edit', edit_sensor_path(sensor) %></td>
         <td><%= link_to 'Destroy', sensor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
