@@ -1,16 +1,18 @@
 class SensorsController < ApplicationController
   protect_from_forgery with: :null_session
-  before_action :set_sensor, only: [:show, :edit, :update, :destroy]
+  before_action :set_sensor, only: [:show, :edit, :update, :destroy,:values]
+  before_action :set_node, only: [:new,:edit,:index]
 
   # GET /sensors
   # GET /sensors.json
   def index
-    @sensors = Sensor.all
+    @sensors = @node.sensors
   end
 
   # GET /sensors/1
   # GET /sensors/1.json
   def show
+    @values = @sensor.values
   end
 
   # GET /sensors/new
@@ -25,11 +27,11 @@ class SensorsController < ApplicationController
   # POST /sensors
   # POST /sensors.json
   def create
-    @sensor = Sensor.new(sensor_params)
 
+    @sensor = Sensor.new(sensor_params)
     respond_to do |format|
       if @sensor.save
-        format.html { redirect_to @sensor, notice: 'Sensor was successfully created.' }
+        format.html { redirect_to action: "show", id:@sensor.id, notice: 'Sensor was successfully created.' }
         format.json { render :show, status: :created, location: @sensor }
       else
         format.html { render :new }
@@ -67,10 +69,22 @@ class SensorsController < ApplicationController
     @value = Value.create(value_params)
   end
 
+  def values
+    @values = @sensor.values
+  end
+
   private
+
+    def set_node
+      @node = Node.find(params[:node_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_sensor
       @sensor = Sensor.find(params[:id])
+    end
+
+    def set_node
+      @node = Node.find(params[:node_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -82,7 +96,5 @@ class SensorsController < ApplicationController
       params.require(:sensor).permit(:sensor_id,:value)
     end
 
-    def values
-      @values = @sensor.values
-    end
+
 end

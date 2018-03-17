@@ -1,13 +1,13 @@
 <nav class = "light-green darken-2">
-    
+
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">TuCultivo</a>
+      <a href="/" class="brand-logo">TuCultivo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if user_signed_in? %>
         <li>
             <%= current_user.email%>
         </li>
-        
+
         <span class="caret"></span></a>
         <li>
             <%= link_to 'Mis nodos', nodes_path, method: :get %>
@@ -23,8 +23,8 @@
             <%= link_to 'Registrarse', new_user_registration_path%>
         </li>
         <% end %>
-        
-        
+
+
       </ul>
     </div>
   </nav>

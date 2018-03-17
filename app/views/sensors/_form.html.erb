@@ -1,4 +1,4 @@
-<%= form_with(model: sensor, local: true) do |form| %>
+<%= form_with(url: node_create_sensor_path, local: true) do |form| %>
   <% if sensor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(sensor.errors.count, "error") %> prohibited this sensor from being saved:</h2>
@@ -17,8 +17,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :node_id %>
-    <%= form.text_field :node_id, id: :sensor_node_id %>
+    <%= hidden_field(:sensor, :node_id, value: @node.id) %>
   </div>
 
   <div class="actions">

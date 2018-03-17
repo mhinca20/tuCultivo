@@ -12,7 +12,6 @@ class NodesController < ApplicationController
   # GET /nodes/1
   # GET /nodes/1.json
   def show
-    @sensors = @node.sensors
   end
 
   # GET /nodes/new
