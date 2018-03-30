@@ -1,6 +1,6 @@
 class SensorsController < ApplicationController
   protect_from_forgery with: :null_session
-  before_action :set_sensor, only: [:show, :edit, :update, :destroy,:values]
+  before_action :set_sensor, only: [:show, :edit, :update, :destroy,:values,:create_value]
   before_action :set_node, only: [:new,:edit,:index]
 
   # GET /sensors
@@ -66,7 +66,7 @@ class SensorsController < ApplicationController
 
   # POST /sensors/id
   def create_value
-    @value = Value.create(value_params)
+    @value = @sensor.values.create(value_params)
   end
 
   def values
@@ -93,7 +93,7 @@ class SensorsController < ApplicationController
     end
 
     def value_params
-      params.require(:sensor).permit(:sensor_id,:value)
+      params.require(:sensor).permit(:value)
     end
 
 

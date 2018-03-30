@@ -5,13 +5,11 @@ Rails.application.routes.draw do
 
   resources :nodes do
     resources :sensors
-    delete "/nodes/:node_id/sensors/:id", to: "sensors#destroy", as:"delete_sensor"
-    post "/nodes/:node_id/sensors", to: "sensors#create", as:"create_sensor"
+    delete "/sensors/:id", to: "sensors#destroy", as:"delete_sensor"
+    post "/sensors", to: "sensors#create", as:"create_sensor"
+   
+    get '/sensors/:sensor_id/values', to: 'sensors#values', as: 'values'
   end
 
-  post 'sensors/:id/values', to: 'sensors#create_value'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  # GET "sensors/", to: "sensors#index"
-  get 'sensors/:id/values', to: 'sensors#values', as: 'values'
+  post '/sensors/:id/values', to: 'sensors#create_value'
 end
