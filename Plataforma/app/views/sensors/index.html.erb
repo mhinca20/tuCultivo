@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+
+<h4>Sensors</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sensors.each do |sensor| %>
+      <tr>
+        <td><%= sensor.name %></td>
+        <td><%= link_to 'Show', node_sensor_path(@node.id,sensor) %></td>
+        <td><%= link_to 'Edit', edit_node_sensor_path(@node.id,sensor) %></td>
+        <td><%= link_to 'Destroy', node_delete_sensor_path(@node.id,sensor), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<a class="btn-floating btn-large waves-effect waves-light green" <%= link_to '+', new_node_sensor_path(node_id: @node.id) %><i class="material-icons"></i></a>
