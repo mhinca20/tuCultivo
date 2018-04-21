@@ -5,7 +5,7 @@ class FarmsController < ApplicationController
   # GET /farms
   # GET /farms.json
   def index
-    @farms = Farm.all
+    @farms = current_user.farms
   end
 
   # GET /farms/1
@@ -25,7 +25,7 @@ class FarmsController < ApplicationController
   # POST /farms
   # POST /farms.json
   def create
-    @farm = Farm.new(farm_params)
+    @farm = current_user.farms.new(farm_params)
 
     respond_to do |format|
       if @farm.save

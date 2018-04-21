@@ -17,10 +17,10 @@
       <tr>
         <td><%= lot.name %></td>
         <td><%= lot.location %></td>
-        <td><%= lot.farm %></td>
-        <td><%= link_to 'Show', lot %></td>
-        <td><%= link_to 'Edit', edit_lot_path(lot) %></td>
-        <td><%= link_to 'Destroy', lot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= lot.farm.name %></td>
+        <td><%= link_to 'Show', farm_lot_url(id: lot.id) %></td>
+        <td><%= link_to 'Edit', edit_farm_lot_path(id: lot.id) %></td>
+        <td><%= link_to 'Destroy', controller: "lots", method: "destroy", data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Lot', new_lot_path %>
+<%= link_to 'New Lot', new_farm_lot_path %>

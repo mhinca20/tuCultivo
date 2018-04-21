@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  get 'plague_reports/create'
-
-  resources :grooves
-  resources :lots
-  resources :farms
   devise_for :users
+  
+  get 'plague_reports/create'
+  
+  resources :farms do
+    resources :lots do 
+      resources :grooves
+    end  
+  end
+  
   root to: "nodes#index"
 
 

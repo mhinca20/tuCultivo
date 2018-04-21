@@ -5,5 +5,7 @@
   <%= @farm.name %>
 </p>
 
+<%= link_to 'Ver lotes', farm_lots_path(@farm.id) %> 
+
 <%= link_to 'Edit', edit_farm_path(@farm) %> |
 <%= link_to 'Back', farms_path %>
