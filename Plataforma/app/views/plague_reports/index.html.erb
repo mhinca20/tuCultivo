@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reporte Plagas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plague_reports.each do |report| %>
+      <tr>
+        <td><%= report.quantity %></td>
+        <td><%= report.reportDate %></td>
+        <td><%= link_to 'Show', farm_lot_groofe_plague_report_path(id: report.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

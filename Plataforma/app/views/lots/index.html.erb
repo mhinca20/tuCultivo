@@ -18,7 +18,7 @@
         <td><%= lot.name %></td>
         <td><%= lot.location %></td>
         <td><%= lot.farm.name %></td>
-        <td><%= link_to 'Show', farm_lot_url(id: lot.id) %></td>
+        <td><%= link_to 'Ver surcos', farm_lot_grooves_path(lot_id: lot.id) %> </td>
         <td><%= link_to 'Edit', edit_farm_lot_path(id: lot.id) %></td>
         <td><%= link_to 'Destroy', controller: "lots", method: "destroy", data: { confirm: 'Are you sure?' } %></td>
       </tr>

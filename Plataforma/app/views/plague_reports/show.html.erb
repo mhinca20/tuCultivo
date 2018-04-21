@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cantidad:</strong>
+  <%= @plague_report.quantity %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @plague_report.reportDate %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @plague_report.description %>
+</p>
+
+<p>
+  <strong>Id Surco:</strong>
+  <%= @plague_report.groove.id %>
+</p>
+
+<%= link_to 'Back', farm_lot_groofe_plague_reports_path %>

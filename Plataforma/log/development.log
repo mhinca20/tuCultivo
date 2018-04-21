@@ -2198,3 +2198,1688 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 53ms (Views: 52.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/farms" for 127.0.0.1 at 2018-04-21 13:02:55 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (19.5ms)
+  Rendered partials/_navbar.html.erb (2.5ms)
+Started GET "/farms" for 127.0.0.1 at 2018-04-21 13:03:02 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.4ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (5.0ms)
+  Rendered partials/_navbar.html.erb (2.1ms)
+Completed 200 OK in 8757ms (Views: 8610.1ms | ActiveRecord: 2.1ms)
+
+
+Completed 200 OK in 1943ms (Views: 1928.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-21 13:03:09 -0500
+Processing by NodesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering nodes/index.html.erb within layouts/application
+  [1m[36mNode Load (0.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" INNER JOIN "collaborations" ON "nodes"."id" = "collaborations"."node_id" WHERE "collaborations"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered nodes/index.html.erb within layouts/application (19.3ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 144ms (Views: 110.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2018-04-21 13:03:16 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (2.2ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 95ms (Views: 87.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2018-04-21 13:03:18 -0500
+Processing by FarmsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (31.8ms)
+  Rendered farms/new.html.erb within layouts/application (39.4ms)
+  Rendered partials/_navbar.html.erb (1.1ms)
+Completed 200 OK in 151ms (Views: 134.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/farms" for 127.0.0.1 at 2018-04-21 13:03:27 -0500
+Processing by FarmsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aSj10O32NZZjsAUQJnMg13Gd8ahY1Hjkz6FSQtMfO5IEFcvK03KDD8P7BisNPOxRANPpmTGqcJKlFdUxfXHDLw==", "farm"=>{"name"=>"Granja de perras"}, "commit"=>"Create Farm"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "farms" ("name", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["name", "Granja de perras"], ["created_at", "2018-04-21 18:03:27.896967"], ["updated_at", "2018-04-21 18:03:27.896967"], ["user_id", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/farms/4
+Completed 302 Found in 15ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/farms/4" for 127.0.0.1 at 2018-04-21 13:03:27 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.8ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 125ms (Views: 116.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/farms/4/edit" for 127.0.0.1 at 2018-04-21 13:03:29 -0500
+Processing by FarmsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering farms/edit.html.erb within layouts/application
+  Rendered farms/_form.html.erb (3.3ms)
+  Rendered farms/edit.html.erb within layouts/application (10.5ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 130ms (Views: 122.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/farms/4" for 127.0.0.1 at 2018-04-21 13:03:36 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (0.8ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 93ms (Views: 86.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-04-21 13:03:38 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.3ms)[0m  [1m[34mSELECT "lots".* FROM "lots"[0m
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/index.html.erb within layouts/application (22.6ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 115ms (Views: 102.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/farms/4/lots/1" for 127.0.0.1 at 2018-04-21 13:05:17 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.6ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/show.html.erb within layouts/application (406.5ms)
+Completed 401 Unauthorized in 463ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_lot_path' for #<#<Class:0x007fc08cadeae0>:0x007fc08754f340>
+Did you mean?  edit_node_path
+               edit_farm_path):
+    15:   <%= @lot.farm %>
+    16: </p>
+    17: 
+    18: <%= link_to 'Edit', edit_lot_path(@lot) %> |
+    19: <%= link_to 'Back', lots_path %>
+  
+app/views/lots/show.html.erb:18:in `_app_views_lots_show_html_erb__573046424822614083_70232440471180'
+Started GET "/farms/4/lots/1" for 127.0.0.1 at 2018-04-21 13:05:20 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/show.html.erb within layouts/application (237.7ms)
+Completed 401 Unauthorized in 258ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_lot_path' for #<#<Class:0x007fc08cadeae0>:0x007fc08e01a800>
+Did you mean?  edit_node_path
+               edit_farm_path):
+    15:   <%= @lot.farm %>
+    16: </p>
+    17: 
+    18: <%= link_to 'Edit', edit_lot_path(@lot) %> |
+    19: <%= link_to 'Back', lots_path %>
+  
+app/views/lots/show.html.erb:18:in `_app_views_lots_show_html_erb__573046424822614083_70232496462100'
+Started GET "/farms/4/lots/1" for 127.0.0.1 at 2018-04-21 13:06:25 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.8ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/show.html.erb within layouts/application (707.1ms)
+Completed 401 Unauthorized in 772ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `lots_path' for #<#<Class:0x007fc08cadeae0>:0x007fc08a392bf8>
+Did you mean?  font_path
+               root_path):
+    16: </p>
+    17: 
+    18: <%= link_to 'Edit', edit_farm_lot_path(@lot) %> |
+    19: <%= link_to 'Back', lots_path %>
+  
+app/views/lots/show.html.erb:19:in `_app_views_lots_show_html_erb__573046424822614083_70232464753380'
+Started POST "/grooves/1/reports" for 127.0.0.1 at 2018-04-21 13:07:17 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"quantity"=>10, "reportDate"=>"2018-04-22", "description"=>"Esta chimbada se prendió because has 10 of 13 beibi"}, "groove_id"=>"1"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "plague_reports" ("quantity", "reportDate", "description", "groove_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["quantity", 10], ["reportDate", "2018-04-22"], ["description", "Esta chimbada se prendió because has 10 of 13 beibi"], ["groove_id", 1], ["created_at", "2018-04-21 18:07:17.059142"], ["updated_at", "2018-04-21 18:07:17.059142"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering plague_reports/create.html.erb within layouts/application
+  Rendered plague_reports/create.html.erb within layouts/application (0.6ms)
+  Rendered partials/_navbar.html.erb (8.1ms)
+Completed 200 OK in 168ms (Views: 121.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/farms/4/lots/1" for 127.0.0.1 at 2018-04-21 13:07:20 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/show.html.erb within layouts/application (2.5ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 121ms (Views: 110.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/farms/1/lots/1/edit" for 127.0.0.1 at 2018-04-21 13:07:26 -0500
+Processing by LotsController#edit as HTML
+  Parameters: {"farm_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/edit.html.erb within layouts/application
+  Rendered lots/_form.html.erb (168.9ms)
+  Rendered lots/edit.html.erb within layouts/application (173.8ms)
+Completed 401 Unauthorized in 205ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `lot_path' for #<#<Class:0x007fc08cadeae0>:0x007fc0873270e0>
+Did you mean?  font_path
+               root_path):
+    1: <%= form_with(model: lot, local: true) do |form| %>
+    2:   <% if lot.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(lot.errors.count, "error") %> prohibited this lot from being saved:</h2>
+  
+app/views/lots/_form.html.erb:1:in `_app_views_lots__form_html_erb___462852757116172747_70232445396400'
+app/views/lots/edit.html.erb:3:in `_app_views_lots_edit_html_erb___1108784674158118254_70232439340380'
+Started GET "/farms/1/lots/1/edit" for 127.0.0.1 at 2018-04-21 13:07:40 -0500
+Processing by LotsController#edit as HTML
+  Parameters: {"farm_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/edit.html.erb within layouts/application
+  Rendered lots/_form.html.erb (199.2ms)
+  Rendered lots/edit.html.erb within layouts/application (205.5ms)
+Completed 401 Unauthorized in 235ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `lot_path' for #<#<Class:0x007fc08cadeae0>:0x007fc08d157458>
+Did you mean?  font_path
+               root_path):
+    1: <%= form_with(model: lot, local: true) do |form| %>
+    2:   <% if lot.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(lot.errors.count, "error") %> prohibited this lot from being saved:</h2>
+  
+app/views/lots/_form.html.erb:1:in `_app_views_lots__form_html_erb___462852757116172747_70232488677760'
+app/views/lots/edit.html.erb:3:in `_app_views_lots_edit_html_erb___1108784674158118254_70232488722200'
+Started GET "/farms/4/lots/1" for 127.0.0.1 at 2018-04-21 13:07:45 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/show.html.erb within layouts/application (3.0ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 89ms (Views: 83.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/4/lots/1" for 127.0.0.1 at 2018-04-21 13:09:22 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/show.html.erb within layouts/application (6.6ms)
+Completed 401 Unauthorized in 26ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"grooves", :farm_id=>1, :id=>"1"}, missing required keys: [:lot_id]):
+    15:   <%= @lot.farm.name %>
+    16: </p>
+    17: 
+    18: <%= link_to 'Ver surcos', farm_lot_grooves_path(@lot.id) %> 
+    19: 
+    20: <%= link_to 'Edit', edit_farm_lot_path(@lot) %> |
+    21: <%= link_to 'Back', farm_lots_path %>
+  
+app/views/lots/show.html.erb:18:in `_app_views_lots_show_html_erb__573046424822614083_70232440532920'
+Started GET "/farms/4/lots/1" for 127.0.0.1 at 2018-04-21 13:09:52 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/show.html.erb within layouts/application (2.4ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 95ms (Views: 89.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:09:54 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (250.4ms)
+Completed 401 Unauthorized in 270ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `groofe_path' for #<#<Class:0x007fc08af0d8e8>:0x007fc0873ab520>
+Did you mean?  root_path):
+    16:       <tr>
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <td><%= link_to 'Show', groofe %></td>
+    20:         <td><%= link_to 'Edit', edit_groofe_path(groofe) %></td>
+    21:         <td><%= link_to 'Destroy', groofe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  
+app/views/grooves/index.html.erb:19:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232470745940'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232470745940'
+Started GET "/farms/4/lots/1" for 127.0.0.1 at 2018-04-21 13:10:55 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.3ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/show.html.erb within layouts/application (2.7ms)
+  Rendered partials/_navbar.html.erb (0.6ms)
+Completed 200 OK in 88ms (Views: 79.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms/4" for 127.0.0.1 at 2018-04-21 13:11:06 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.5ms)
+  Rendered partials/_navbar.html.erb (0.6ms)
+Completed 200 OK in 85ms (Views: 77.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-04-21 13:11:11 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT "lots".* FROM "lots"[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/index.html.erb within layouts/application (4.4ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 102ms (Views: 87.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/4/lots/1" for 127.0.0.1 at 2018-04-21 13:11:14 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/show.html.erb within layouts/application (2.3ms)
+  Rendered partials/_navbar.html.erb (0.6ms)
+Completed 200 OK in 82ms (Views: 75.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:11:16 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (170.8ms)
+Completed 401 Unauthorized in 189ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `groofe_path' for #<#<Class:0x007fc08af0d8e8>:0x007fc08a399868>
+Did you mean?  root_path):
+    16:       <tr>
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <td><%= link_to 'Show', groofe %></td>
+    20:         <td><%= link_to 'Edit', edit_groofe_path(groofe) %></td>
+    21:         <td><%= link_to 'Destroy', groofe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  
+app/views/grooves/index.html.erb:19:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232464742380'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232464742380'
+Started GET "/farms/4" for 127.0.0.1 at 2018-04-21 13:12:10 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (1.2ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 110ms (Views: 102.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/farms/4" for 127.0.0.1 at 2018-04-21 13:12:14 -0500
+Processing by FarmsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering farms/show.html.erb within layouts/application
+  Rendered farms/show.html.erb within layouts/application (0.9ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 93ms (Views: 85.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2018-04-21 13:12:21 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (9.2ms)
+Completed 401 Unauthorized in 30ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    17:       <tr>
+    18:         <td><%= farm.name %></td>
+    19:         <td><%= link_to 'Show', farm %></td>
+    20:         <%= link_to 'Ver lotes', farm_lots_path(@farm.id) %> 
+    21:         <td><%= link_to 'Edit', edit_farm_path(farm) %></td>
+    22:         <td><%= link_to 'Destroy', farm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    23:       </tr>
+  
+app/views/farms/index.html.erb:20:in `block in _app_views_farms_index_html_erb__4518367622125201298_70232466093640'
+app/views/farms/index.html.erb:16:in `_app_views_farms_index_html_erb__4518367622125201298_70232466093640'
+Started GET "/farms" for 127.0.0.1 at 2018-04-21 13:12:24 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (6.9ms)
+Completed 401 Unauthorized in 26ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    17:       <tr>
+    18:         <td><%= farm.name %></td>
+    19:         <td><%= link_to 'Show', farm %></td>
+    20:         <%= link_to 'Ver lotes', farm_lots_path(@farm.id) %> 
+    21:         <td><%= link_to 'Edit', edit_farm_path(farm) %></td>
+    22:         <td><%= link_to 'Destroy', farm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    23:       </tr>
+  
+app/views/farms/index.html.erb:20:in `block in _app_views_farms_index_html_erb__4518367622125201298_70232493587520'
+app/views/farms/index.html.erb:16:in `_app_views_farms_index_html_erb__4518367622125201298_70232493587520'
+Started GET "/farms" for 127.0.0.1 at 2018-04-21 13:12:39 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (2.3ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 87ms (Views: 82.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-04-21 13:12:44 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT "lots".* FROM "lots"[0m
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/index.html.erb within layouts/application (3.4ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 78ms (Views: 71.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2018-04-21 13:13:43 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (2.9ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 114ms (Views: 103.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-04-21 13:13:46 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT "lots".* FROM "lots"[0m
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/index.html.erb within layouts/application (3.5ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 89ms (Views: 81.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2018-04-21 13:14:26 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (3.0ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 134ms (Views: 125.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-04-21 13:14:27 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.3ms)[0m  [1m[34mSELECT "lots".* FROM "lots"[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/index.html.erb within layouts/application (11.8ms)
+Completed 401 Unauthorized in 39ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    19:         <td><%= lot.location %></td>
+    20:         <td><%= lot.farm.name %></td>
+    21:         <td><%= link_to 'Show', farm_lot_url(id: lot.id) %></td>
+    22:         <td><%= link_to 'Ver surcos', farm_lot_grooves_path(lot_id: @lot.id) %> </td>
+    23:         <td><%= link_to 'Edit', edit_farm_lot_path(id: lot.id) %></td>
+    24:         <td><%= link_to 'Destroy', controller: "lots", method: "destroy", data: { confirm: 'Are you sure?' } %></td>
+    25:       </tr>
+  
+app/views/lots/index.html.erb:22:in `block in _app_views_lots_index_html_erb___3827361462466358730_70232493352640'
+app/views/lots/index.html.erb:16:in `_app_views_lots_index_html_erb___3827361462466358730_70232493352640'
+Started GET "/farms" for 127.0.0.1 at 2018-04-21 13:14:39 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (2.8ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 111ms (Views: 102.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-04-21 13:14:41 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT "lots".* FROM "lots"[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/index.html.erb within layouts/application (3.7ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 105ms (Views: 97.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:14:44 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (179.7ms)
+Completed 401 Unauthorized in 211ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `groofe_path' for #<#<Class:0x007fc08af0d8e8>:0x007fc08adce130>
+Did you mean?  root_path):
+    16:       <tr>
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <td><%= link_to 'Show', groofe %></td>
+    20:         <td><%= link_to 'Edit', edit_groofe_path(groofe) %></td>
+    21:         <td><%= link_to 'Destroy', groofe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  
+app/views/grooves/index.html.erb:19:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232470091320'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232470091320'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:15:17 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (192.6ms)
+Completed 401 Unauthorized in 212ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `groofe_path' for #<#<Class:0x007fc08af0d8e8>:0x007fc08c9f5f98>
+Did you mean?  root_path):
+    16:       <tr>
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <td><%= link_to 'Show', groofe %></td>
+    20:         <td><%= link_to 'Edit', edit_groofe_path(groofe) %></td>
+    21:         <td><%= link_to 'Destroy', groofe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  
+app/views/grooves/index.html.erb:19:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232484853240'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232484853240'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:27:39 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (27.6ms)
+Completed 401 Unauthorized in 79ms (ActiveRecord: 3.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    16:       <tr>
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <%= link_to 'Ver reportes', farm_lot_grooves_path(lot_id: @lot.id) %> 
+    20:         <td><%= link_to 'Edit', edit_groofe_path(groofe) %></td>
+    21:         <td><%= link_to 'Destroy', groofe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  
+app/views/grooves/index.html.erb:19:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232485504240'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232485504240'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:32:49 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (347.4ms)
+Completed 401 Unauthorized in 367ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `lot' for #<#<Class:0x007fc08cb34120>:0x007fc087f01c30>
+Did you mean?  loop):
+    16:       <tr>
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <%= link_to 'Ver reportes', farm_lot_grooves_path(lot_id: lot.id) %> 
+    20:         <td><%= link_to 'Edit', edit_groofe_path(groofe) %></td>
+    21:         <td><%= link_to 'Destroy', groofe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  
+app/views/grooves/index.html.erb:19:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232445555680'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232445555680'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:43:40 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (371.1ms)
+Completed 401 Unauthorized in 423ms (ActiveRecord: 3.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `farm_lot_groofe_plague_reports' for #<#<Class:0x007fc08731c8c0>:0x007fc087e9e6d0>
+Did you mean?  farm_lot_groofe_plague_reports_url
+               farm_lot_groofe_plague_reports_path
+               farm_lot_groofe_plague_report_url
+               farm_lot_groofe_plague_report_path):
+    16:       <tr>
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <%= link_to 'Ver reportes', farm_lot_groofe_plague_reports %> 
+    20:         <td><%= link_to 'Edit', edit_groofe_path(groofe) %></td>
+    21:         <td><%= link_to 'Destroy', groofe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  
+app/views/grooves/index.html.erb:19:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232439319440'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232439319440'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:43:56 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (8.2ms)
+Completed 401 Unauthorized in 25ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"plague_reports", :farm_id=>"4", :lot_id=>"1"}, missing required keys: [:groofe_id]):
+    16:       <tr>
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <%= link_to 'Ver reportes', farm_lot_groofe_plague_reports_path %> 
+    20:         <td><%= link_to 'Edit', edit_groofe_path(groofe) %></td>
+    21:         <td><%= link_to 'Destroy', groofe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  
+app/views/grooves/index.html.erb:19:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232432990920'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232432990920'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:44:17 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (208.4ms)
+Completed 401 Unauthorized in 239ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_groofe_path' for #<#<Class:0x007fc08731c8c0>:0x007fc08779e9c0>
+Did you mean?  edit_node_path):
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <%= link_to 'Ver reportes', farm_lot_groofe_plague_reports_path(groofe_id: groofe.id) %> 
+    20:         <td><%= link_to 'Edit', edit_groofe_path(groofe) %></td>
+    21:         <td><%= link_to 'Destroy', groofe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+    23:     <% end %>
+  
+app/views/grooves/index.html.erb:20:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232441682620'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232441682620'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:45:58 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (8.0ms)
+Completed 401 Unauthorized in 29ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"grooves", :farm_id=>#<Groove id: 1, quantity: 13, lot_id: 1, created_at: "2018-04-21 14:50:15", updated_at: "2018-04-21 14:50:15">, :lot_id=>"1"}, missing required keys: [:id]):
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <%= link_to 'Ver reportes', farm_lot_groofe_plague_reports_path(groofe_id: groofe.id) %> 
+    20:         <td><%= link_to 'Edit', edit_farm_lot_groofe_path(groofe) %></td>
+    21:         <td><%= link_to 'Destroy', controller: "grooves", method: "destroy", data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+    23:     <% end %>
+  
+app/views/grooves/index.html.erb:20:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232488685360'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232488685360'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:46:21 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (6.4ms)
+Completed 401 Unauthorized in 23ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"grooves", :farm_id=>1, :lot_id=>"1"}, missing required keys: [:id]):
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <%= link_to 'Ver reportes', farm_lot_groofe_plague_reports_path(groofe_id: groofe.id) %> 
+    20:         <td><%= link_to 'Edit', edit_farm_lot_groofe_path(groofe.id) %></td>
+    21:         <td><%= link_to 'Destroy', controller: "grooves", method: "destroy", data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+    23:     <% end %>
+  
+app/views/grooves/index.html.erb:20:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232468971780'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232468971780'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:46:32 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (6.3ms)
+Completed 401 Unauthorized in 23ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"grooves", :farm_id=>"4", :groofe_id=>1, :lot_id=>"1"}, missing required keys: [:id]):
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot %></td>
+    19:         <%= link_to 'Ver reportes', farm_lot_groofe_plague_reports_path(groofe_id: groofe.id) %> 
+    20:         <td><%= link_to 'Edit', edit_farm_lot_groofe_path(groofe_id: groofe.id) %></td>
+    21:         <td><%= link_to 'Destroy', controller: "grooves", method: "destroy", data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+    23:     <% end %>
+  
+app/views/grooves/index.html.erb:20:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232489218900'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232489218900'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:46:45 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (346.3ms)
+Completed 401 Unauthorized in 363ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_groofe_path' for #<#<Class:0x007fc08731c8c0>:0x007fc08ae75610>
+Did you mean?  new_node_path):
+    26: 
+    27: <br>
+    28: 
+    29: <%= link_to 'New Groofe', new_groofe_path %>
+  
+app/views/grooves/index.html.erb:29:in `_app_views_grooves_index_html_erb__2514457394870588911_70232470433900'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:47:12 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (3.5ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 130ms (Views: 123.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:47:52 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.3ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (5.8ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 118ms (Views: 109.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:48:10 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (5.3ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 103ms (Views: 94.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:48:12 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Groove with 'id'=):
+  
+app/controllers/plague_reports_controller.rb:22:in `set_groove'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:48:19 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Groove with 'id'=):
+  
+app/controllers/plague_reports_controller.rb:22:in `set_groove'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:49:17 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Groove with 'id'=):
+  
+app/controllers/plague_reports_controller.rb:22:in `set_groove'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:52:34 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.4ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Groove with 'id'=):
+  
+app/controllers/plague_reports_controller.rb:22:in `set_groove'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:52:39 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Groove with 'id'=):
+  
+app/controllers/plague_reports_controller.rb:22:in `set_groove'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:53:04 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (8.8ms)
+Completed 401 Unauthorized in 34ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"plague_reports", :farm_id=>"4", :groove_id=>1, :lot_id=>"1"}, missing required keys: [:groofe_id]):
+    16:       <tr>
+    17:         <td><%= groofe.quantity %></td>
+    18:         <td><%= groofe.lot.name %></td>
+    19:         <td><%= link_to 'Ver reportes', farm_lot_groofe_plague_reports_path(groove_id: groofe.id) %></td> 
+    20:         <td><%= link_to 'Edit', edit_farm_lot_groofe_path(id: groofe.id) %></td>
+    21:         <td><%= link_to 'Destroy', controller: "grooves", method: "destroy", data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  
+app/views/grooves/index.html.erb:19:in `block in _app_views_grooves_index_html_erb__2514457394870588911_70232485518940'
+app/views/grooves/index.html.erb:15:in `_app_views_grooves_index_html_erb__2514457394870588911_70232485518940'
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:53:22 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (6.3ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 140ms (Views: 132.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:53:23 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Groove with 'id'=):
+  
+app/controllers/plague_reports_controller.rb:22:in `set_groove'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:53:35 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.1ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (389.4ms)
+Completed 401 Unauthorized in 428ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `lot' for #<#<Class:0x007fc08d9f5ce0>:0x007fc08d9efae8>
+Did you mean?  loop):
+    16:       <tr>
+    17:         <td><%= report.quantity %></td>
+    18:         <td><%= report.reportDate %></td>
+    19:         <td><%= link_to 'Show', farm_lot_url(id: lot.id) %></td>
+    20:         <td><%= link_to 'Edit', edit_groofe_path(groofe) %></td>
+    21:         <td><%= link_to 'Destroy', groofe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    22:       </tr>
+  
+app/views/plague_reports/index.html.erb:19:in `block in _app_views_plague_reports_index_html_erb__1835802013279756232_70232493241140'
+app/views/plague_reports/index.html.erb:15:in `_app_views_plague_reports_index_html_erb__1835802013279756232_70232493241140'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:54:58 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (350.2ms)
+Completed 401 Unauthorized in 372ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_groofe_path' for #<#<Class:0x007fc08d9f5ce0>:0x007fc08d0b0e50>
+Did you mean?  new_node_path):
+    24: 
+    25: <br>
+    26: 
+    27: <%= link_to 'New Groofe', new_groofe_path %>
+  
+app/views/plague_reports/index.html.erb:27:in `_app_views_plague_reports_index_html_erb__1835802013279756232_70232488381760'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:55:40 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.4ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (370.4ms)
+Completed 401 Unauthorized in 390ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_farm_lot_groofe' for #<#<Class:0x007fc08d9f5ce0>:0x007fc08afbc898>
+Did you mean?  new_farm_lot_groofe_url
+               new_farm_lot_groofe_path
+               new_farm_lot_url):
+    24: 
+    25: <br>
+    26: 
+    27: <%= link_to 'New Groofe', new_farm_lot_groofe %>
+  
+app/views/plague_reports/index.html.erb:27:in `_app_views_plague_reports_index_html_erb__1835802013279756232_70232471103840'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:55:56 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (25.2ms)
+Completed 200 OK in 212ms (Views: 205.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:56:25 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.1ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (3.4ms)
+Completed 200 OK in 133ms (Views: 127.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:56:39 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (3.5ms)
+Completed 200 OK in 132ms (Views: 121.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/farms/4/lots/1" for 127.0.0.1 at 2018-04-21 13:56:41 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/show.html.erb within layouts/application (39.2ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 167ms (Views: 136.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/farms/4/lots/1" for 127.0.0.1 at 2018-04-21 13:56:57 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/show.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/show.html.erb within layouts/application (2.6ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 97ms (Views: 89.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-21 13:57:05 -0500
+Processing by NodesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering nodes/index.html.erb within layouts/application
+  [1m[36mNode Load (0.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" INNER JOIN "collaborations" ON "nodes"."id" = "collaborations"."node_id" WHERE "collaborations"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered nodes/index.html.erb within layouts/application (7.9ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 111ms (Views: 89.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2018-04-21 13:57:11 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (3.4ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 91ms (Views: 83.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-04-21 13:57:13 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.3ms)[0m  [1m[34mSELECT "lots".* FROM "lots"[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/index.html.erb within layouts/application (6.0ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 113ms (Views: 98.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:57:16 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.3ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (7.0ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 102ms (Views: 93.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:57:19 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.1ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 110ms (Views: 97.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-21 13:57:35 -0500
+Processing by NodesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering nodes/index.html.erb within layouts/application
+  [1m[36mNode Load (0.1ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" INNER JOIN "collaborations" ON "nodes"."id" = "collaborations"."node_id" WHERE "collaborations"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered nodes/index.html.erb within layouts/application (2.2ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 87ms (Views: 81.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/farms" for 127.0.0.1 at 2018-04-21 13:59:04 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (3.5ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 117ms (Views: 109.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-04-21 13:59:13 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT "lots".* FROM "lots"[0m
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/index.html.erb within layouts/application (3.5ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 100ms (Views: 85.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 13:59:15 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (3.1ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 102ms (Views: 86.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:59:17 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (378.3ms)
+Completed 401 Unauthorized in 399ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `farm_lot_groofe_plague_report' for #<#<Class:0x007fc08d9f5ce0>:0x007fc08ad0c620>
+Did you mean?  farm_lot_groofe_plague_report_url
+               farm_lot_groofe_plague_reports_url
+               farm_lot_groofe_plague_report_path
+               farm_lot_groofe_plague_reports_path):
+    16:       <tr>
+    17:         <td><%= report.quantity %></td>
+    18:         <td><%= report.reportDate %></td>
+    19:         <td><%= link_to 'Show', farm_lot_groofe_plague_report  %></td>
+    20:       </tr>
+    21:     <% end %>
+    22:   </tbody>
+  
+app/views/plague_reports/index.html.erb:19:in `block in _app_views_plague_reports_index_html_erb__1835802013279756232_70232469694880'
+app/views/plague_reports/index.html.erb:15:in `_app_views_plague_reports_index_html_erb__1835802013279756232_70232469694880'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:59:32 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.3ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (13.6ms)
+Completed 401 Unauthorized in 44ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"plague_reports", :farm_id=>"4", :groofe_id=>"1", :lot_id=>"1"}, missing required keys: [:id]):
+    16:       <tr>
+    17:         <td><%= report.quantity %></td>
+    18:         <td><%= report.reportDate %></td>
+    19:         <td><%= link_to 'Show', farm_lot_groofe_plague_report_path %></td>
+    20:       </tr>
+    21:     <% end %>
+    22:   </tbody>
+  
+app/views/plague_reports/index.html.erb:19:in `block in _app_views_plague_reports_index_html_erb__1835802013279756232_70232445546700'
+app/views/plague_reports/index.html.erb:15:in `_app_views_plague_reports_index_html_erb__1835802013279756232_70232445546700'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 13:59:52 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (7.2ms)
+Completed 401 Unauthorized in 29ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"plague_reports", :farm_id=>1, :groofe_id=>"1", :lot_id=>"1"}, missing required keys: [:id]):
+    16:       <tr>
+    17:         <td><%= report.quantity %></td>
+    18:         <td><%= report.reportDate %></td>
+    19:         <td><%= link_to 'Show', farm_lot_groofe_plague_report_path(report.id) %></td>
+    20:       </tr>
+    21:     <% end %>
+    22:   </tbody>
+  
+app/views/plague_reports/index.html.erb:19:in `block in _app_views_plague_reports_index_html_erb__1835802013279756232_70232441807120'
+app/views/plague_reports/index.html.erb:15:in `_app_views_plague_reports_index_html_erb__1835802013279756232_70232441807120'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 14:00:04 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (2.4ms)
+Completed 200 OK in 124ms (Views: 116.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/farms/4/lots/1/grooves/1/plague_reports/1" for 127.0.0.1 at 2018-04-21 14:00:07 -0500
+Processing by PlagueReportsController#show as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1", "id"=>"1"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/show.html.erb within layouts/application
+  Rendered plague_reports/show.html.erb within layouts/application (7.1ms)
+Completed 401 Unauthorized in 39ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `quantity' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Cantidad:</strong>
+    5:   <%= @plague_report.quantity %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/plague_reports/show.html.erb:5:in `_app_views_plague_reports_show_html_erb__4466248492368656653_70232466369420'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports/1" for 127.0.0.1 at 2018-04-21 14:01:17 -0500
+Processing by PlagueReportsController#show as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1", "id"=>"1"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/show.html.erb within layouts/application
+  Rendered plague_reports/show.html.erb within layouts/application (5.2ms)
+Completed 401 Unauthorized in 23ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `quantity' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Cantidad:</strong>
+    5:   <%= @plague_report.quantity %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/plague_reports/show.html.erb:5:in `_app_views_plague_reports_show_html_erb__4466248492368656653_70232493551420'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports/1" for 127.0.0.1 at 2018-04-21 14:04:56 -0500
+Processing by PlagueReportsController#show as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1", "id"=>"1"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/show.html.erb within layouts/application
+  Rendered plague_reports/show.html.erb within layouts/application (5.0ms)
+Completed 401 Unauthorized in 23ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `quantity' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Cantidad:</strong>
+    5:   <%= @plague_report.quantity %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/plague_reports/show.html.erb:5:in `_app_views_plague_reports_show_html_erb__4466248492368656653_70232445999400'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports/1" for 127.0.0.1 at 2018-04-21 14:12:45 -0500
+Processing by PlagueReportsController#show as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1", "id"=>"1"}
+  [1m[36mPlagueReport Load (0.3ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/show.html.erb within layouts/application
+  [1m[36mGroove Load (0.1ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered plague_reports/show.html.erb within layouts/application (19.2ms)
+Completed 401 Unauthorized in 67ms (ActiveRecord: 4.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    20:   <%= @plague_report.groove.id %>
+    21: </p>
+    22: 
+    23: <%= link_to 'Ver surcos', farm_lot_grooves_path(lot_id: @lot.id) %> 
+    24: 
+    25: <%= link_to 'Edit', edit_farm_lot_path(@lot) %> |
+    26: <%= link_to 'Back', farm_lots_path %>
+  
+app/views/plague_reports/show.html.erb:23:in `_app_views_plague_reports_show_html_erb__4466248492368656653_70232496521880'
+Started GET "/farms/4/lots/1/grooves/1/plague_reports/1" for 127.0.0.1 at 2018-04-21 14:14:01 -0500
+Processing by PlagueReportsController#show as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1", "id"=>"1"}
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/show.html.erb within layouts/application
+  [1m[36mGroove Load (0.1ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered plague_reports/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (19.6ms)
+Completed 200 OK in 144ms (Views: 135.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/farms/4/lots/1/grooves/1/plague_reports/1" for 127.0.0.1 at 2018-04-21 14:15:37 -0500
+Processing by PlagueReportsController#show as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1", "id"=>"1"}
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/show.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered plague_reports/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (2.6ms)
+Completed 200 OK in 121ms (Views: 114.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-21 14:17:49 -0500
+  
+ActionController::RoutingError (uninitialized constant FamsController):
+  
+activesupport (5.1.5) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.5) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.5) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.5) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.5) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.5) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.5) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-04-21 14:18:20 -0500
+  
+ActionController::RoutingError (uninitialized constant FamrsController):
+  
+activesupport (5.1.5) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.5) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.5) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.5) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.5) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.5) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.5) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-04-21 14:18:32 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.5ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (16.6ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 164ms (Views: 130.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/farms/new" for 127.0.0.1 at 2018-04-21 14:18:36 -0500
+Processing by FarmsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/new.html.erb within layouts/application
+  Rendered farms/_form.html.erb (3.2ms)
+  Rendered farms/new.html.erb within layouts/application (9.1ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 108ms (Views: 94.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-04-21 14:18:40 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.4ms)[0m  [1m[34mSELECT "lots".* FROM "lots"[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/index.html.erb within layouts/application (14.7ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 105ms (Views: 90.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/farms/4/lots/1/grooves" for 127.0.0.1 at 2018-04-21 14:18:47 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves"[0m
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (13.9ms)
+  Rendered partials/_navbar.html.erb (0.9ms)
+Completed 200 OK in 108ms (Views: 95.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/farms/4/lots/1/grooves/1/plague_reports" for 127.0.0.1 at 2018-04-21 14:18:52 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"1", "groofe_id"=>"1"}
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  [1m[36mPlagueReport Load (0.3ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 1]]
+  Rendered plague_reports/index.html.erb within layouts/application (13.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 101ms (Views: 86.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-04-21 14:20:39 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.5ms)[0m  [1m[34mSELECT "lots".* FROM "lots"[0m
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered lots/index.html.erb within layouts/application (7.9ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 177ms (Views: 166.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/farms/4/lots/1/edit" for 127.0.0.1 at 2018-04-21 14:20:42 -0500
+Processing by LotsController#edit as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/edit.html.erb within layouts/application
+  Rendered lots/_form.html.erb (193.2ms)
+  Rendered lots/edit.html.erb within layouts/application (198.4ms)
+Completed 401 Unauthorized in 230ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `lot_path' for #<#<Class:0x007fc08ca90b60>:0x007fc0877ee538>
+Did you mean?  font_path
+               root_path):
+    1: <%= form_with(model: lot, local: true) do |form| %>
+    2:   <% if lot.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(lot.errors.count, "error") %> prohibited this lot from being saved:</h2>
+  
+app/views/lots/_form.html.erb:1:in `_app_views_lots__form_html_erb___462852757116172747_70232493471540'
+app/views/lots/edit.html.erb:3:in `_app_views_lots_edit_html_erb___1108784674158118254_70232493484380'
+Started GET "/farms/4/lots/1/edit" for 127.0.0.1 at 2018-04-21 14:24:05 -0500
+Processing by LotsController#edit as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/edit.html.erb within layouts/application
+  Rendered lots/_form.html.erb (398.1ms)
+  Rendered lots/edit.html.erb within layouts/application (403.9ms)
+Completed 401 Unauthorized in 433ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `farm_lot' for #<#<Class:0x007fc08ca90b60>:0x007fc08d16eba8>
+Did you mean?  farm_lot_url):
+    1: <%= form_with(model: farm_lot, local: true) do |form| %>
+    2:   <% if lot.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(lot.errors.count, "error") %> prohibited this lot from being saved:</h2>
+  
+app/views/lots/_form.html.erb:1:in `_app_views_lots__form_html_erb___462852757116172747_70232440397960'
+app/views/lots/edit.html.erb:3:in `_app_views_lots_edit_html_erb___1108784674158118254_70232488770240'
+Started GET "/farms/4/lots/1/edit" for 127.0.0.1 at 2018-04-21 14:24:39 -0500
+Processing by LotsController#edit as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/edit.html.erb within layouts/application
+  Rendered lots/_form.html.erb (219.6ms)
+  Rendered lots/edit.html.erb within layouts/application (223.4ms)
+Completed 401 Unauthorized in 241ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `http://localhost:3000/farms/4/lots/1_path' for #<#<Class:0x007fc08ca90b60>:0x007fc087459af8>):
+    1: <%= form_with(model: farm_lot_url, local: true) do |form| %>
+    2:   <% if lot.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(lot.errors.count, "error") %> prohibited this lot from being saved:</h2>
+  
+app/views/lots/_form.html.erb:1:in `_app_views_lots__form_html_erb___462852757116172747_70232484173760'
+app/views/lots/edit.html.erb:3:in `_app_views_lots_edit_html_erb___1108784674158118254_70232439969500'
+Started GET "/farms/4/lots/1/edit" for 127.0.0.1 at 2018-04-21 14:25:48 -0500
+Processing by LotsController#edit as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/edit.html.erb within layouts/application
+  Rendered lots/_form.html.erb (382.7ms)
+  Rendered lots/edit.html.erb within layouts/application (388.5ms)
+Completed 401 Unauthorized in 418ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `farm_lot' for #<#<Class:0x007fc08ca90b60>:0x007fc08af24660>
+Did you mean?  farm_lot_url):
+    1: <%= form_with(model: farm_lot, local: true) do |form| %>
+    2:   <% if lot.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(lot.errors.count, "error") %> prohibited this lot from being saved:</h2>
+  
+app/views/lots/_form.html.erb:1:in `_app_views_lots__form_html_erb___462852757116172747_70232470742120'
+app/views/lots/edit.html.erb:3:in `_app_views_lots_edit_html_erb___1108784674158118254_70232470792320'
+Started GET "/farms/4/lots/1/edit" for 127.0.0.1 at 2018-04-21 14:26:31 -0500
+Processing by LotsController#edit as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/edit.html.erb within layouts/application
+  Rendered lots/_form.html.erb (323.7ms)
+  Rendered lots/edit.html.erb within layouts/application (328.8ms)
+Completed 401 Unauthorized in 348ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `farm_lot' for #<#<Class:0x007fc08ca90b60>:0x007fc08ad949a8>
+Did you mean?  farm_lot_url):
+    1: <%= form_with(model: farm_lot, local: true) do |form| %>
+    2:   <% if lot.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(lot.errors.count, "error") %> prohibited this lot from being saved:</h2>
+  
+app/views/lots/_form.html.erb:1:in `_app_views_lots__form_html_erb___462852757116172747_70232469926740'
+app/views/lots/edit.html.erb:3:in `_app_views_lots_edit_html_erb___1108784674158118254_70232469973480'
+Started GET "/farms/4/lots/1/edit" for 127.0.0.1 at 2018-04-21 14:27:58 -0500
+Processing by LotsController#edit as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/edit.html.erb within layouts/application
+  Rendered lots/_form.html.erb (7.5ms)
+  Rendered lots/edit.html.erb within layouts/application (212.4ms)
+Completed 401 Unauthorized in 237ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `lot_path' for #<#<Class:0x007fc08ca90b60>:0x007fc0872cd310>
+Did you mean?  font_path
+               root_path):
+    2: 
+    3: <%= render 'form', lot: @lot %>
+    4: 
+    5: <%= link_to 'Show', @lot %> |
+    6: <%= link_to 'Back', lots_path %>
+  
+app/views/lots/edit.html.erb:5:in `_app_views_lots_edit_html_erb___1108784674158118254_70232439156520'
+Started GET "/farms/4/lots/1/edit" for 127.0.0.1 at 2018-04-21 14:28:45 -0500
+Processing by LotsController#edit as HTML
+  Parameters: {"farm_id"=>"4", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering lots/edit.html.erb within layouts/application
+  Rendered lots/_form.html.erb (4.3ms)
+  Rendered lots/edit.html.erb within layouts/application (9.7ms)
+  Rendered partials/_navbar.html.erb (1.6ms)
+Completed 200 OK in 127ms (Views: 119.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-21 14:29:09 -0500
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (3.6ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 117ms (Views: 106.6ms | ActiveRecord: 0.6ms)
+
+

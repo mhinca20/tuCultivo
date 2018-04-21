@@ -12,8 +12,10 @@
 
 <p>
   <strong>Farm:</strong>
-  <%= @lot.farm %>
+  <%= @lot.farm.name %>
 </p>
 
-<%= link_to 'Edit', edit_lot_path(@lot) %> |
-<%= link_to 'Back', lots_path %>
+<%= link_to 'Ver surcos', farm_lot_grooves_path(lot_id: @lot.id) %> 
+
+<%= link_to 'Edit', edit_farm_lot_path(@lot) %> |
+<%= link_to 'Back', farm_lots_path %>

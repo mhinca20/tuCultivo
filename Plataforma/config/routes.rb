@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  
-  get 'plague_reports/create'
-  
   resources :farms do
     resources :lots do 
-      resources :grooves
+      resources :grooves do 
+        resources :plague_reports
+      end
     end  
   end
   
-  root to: "nodes#index"
+ 
 
 
   resources :nodes do
@@ -22,4 +21,5 @@ Rails.application.routes.draw do
 
   post '/sensors/:id/values', to: 'sensors#create_value'
   post '/grooves/:groove_id/reports', to: 'plague_reports#create'
+  root to: "farms#index"
 end
