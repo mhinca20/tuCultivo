@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'plague_reports/create'
+
+  resources :grooves
+  resources :lots
+  resources :farms
   devise_for :users
   root to: "nodes#index"
 
@@ -12,4 +17,5 @@ Rails.application.routes.draw do
   end
 
   post '/sensors/:id/values', to: 'sensors#create_value'
+  post '/grooves/:groove_id/reports', to: 'plague_reports#create'
 end

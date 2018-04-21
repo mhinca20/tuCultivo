@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180310151801) do
+ActiveRecord::Schema.define(version: 20180421143242) do
 
   create_table "collaborations", force: :cascade do |t|
     t.integer "node_id"
@@ -21,11 +21,46 @@ ActiveRecord::Schema.define(version: 20180310151801) do
     t.index ["user_id"], name: "index_collaborations_on_user_id"
   end
 
+  create_table "farms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_farms_on_user_id"
+  end
+
+  create_table "grooves", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "lot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lot_id"], name: "index_grooves_on_lot_id"
+  end
+
+  create_table "lots", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.integer "farm_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["farm_id"], name: "index_lots_on_farm_id"
+  end
+
   create_table "nodes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "reference"
+  end
+
+  create_table "plague_reports", force: :cascade do |t|
+    t.integer "quantity"
+    t.date "reportDate"
+    t.text "description"
+    t.integer "groove_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["groove_id"], name: "index_plague_reports_on_groove_id"
   end
 
   create_table "sensors", force: :cascade do |t|
