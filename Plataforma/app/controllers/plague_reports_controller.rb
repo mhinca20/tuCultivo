@@ -9,6 +9,9 @@ class PlagueReportsController < ApplicationController
 
   def index
     @plague_reports = @groove.plague_reports
+    @data = [["hola","dos"]]
+    @datos = PlagueReport.all
+    @datos.each{|d| @data.push([d.reportDate.to_s,d.quantity.to_f])}   
   end
 
   def show

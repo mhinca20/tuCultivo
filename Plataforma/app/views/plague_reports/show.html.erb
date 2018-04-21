@@ -21,3 +21,33 @@
 </p>
 
 <%= link_to 'Back', farm_lot_groofe_plague_reports_path %>
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Estado', 'Cantidad'],
+          ['Con plagas',     11],
+          ['Sanas',      2],
+        ]);
+
+        var options = {
+          title: 'Reporte'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
