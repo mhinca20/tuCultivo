@@ -1,11 +1,11 @@
 class LotsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_lot, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_farm, only: [:new,:index]
   # GET /lots
   # GET /lots.json
   def index
-    @lots = Lot.all
+    @lots = @farm.lots
   end
 
   # GET /lots/1
@@ -29,7 +29,7 @@ class LotsController < ApplicationController
 
     respond_to do |format|
       if @lot.save
-        format.html { redirect_to @lot, notice: 'Lot was successfully created.' }
+        format.html { redirect_to farm_lots_path, notice: 'Lot was successfully created.' }
         format.json { render :show, status: :created, location: @lot }
       else
         format.html { render :new }
@@ -66,6 +66,10 @@ class LotsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_lot
       @lot = Lot.find(params[:id])
+    end
+
+    def set_farm
+      @farm = Farm.find(params[:farm_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

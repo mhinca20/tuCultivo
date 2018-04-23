@@ -1,4 +1,4 @@
-<%= form_with(model: groofe, local: true) do |form| %>
+<%= form_with(url: farm_lot_grooves_path, local: true) do |form| %>
   <% if groofe.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(groofe.errors.count, "error") %> prohibited this groofe from being saved:</h2>
@@ -12,13 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity, id: :groofe_quantity %>
+    <%= form.label :quantity, "Cantidad" %>
+    <%= number_field :groofe,:quantity, id: :groofe_quantity %>
   </div>
 
   <div class="field">
-    <%= form.label :lot_id %>
-    <%= form.text_field :lot_id, id: :groofe_lot_id %>
+    <%= hidden_field(:groofe, :lot_id, value: @lot.id) %>
   </div>
 
   <div class="actions">

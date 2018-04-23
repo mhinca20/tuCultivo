@@ -1,13 +1,12 @@
 class GroovesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_groofe, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_lot, only: [:new,:index]
   # GET /grooves
   # GET /grooves.json
   def index
-    @grooves = Groove.all
+    @grooves = @lot.groofe
   end
-
   # GET /grooves/1
   # GET /grooves/1.json
   def show
@@ -29,7 +28,7 @@ class GroovesController < ApplicationController
 
     respond_to do |format|
       if @groofe.save
-        format.html { redirect_to @groofe, notice: 'Groove was successfully created.' }
+        format.html { redirect_to  farm_lot_grooves_path, notice: 'Groove was successfully created.' }
         format.json { render :show, status: :created, location: @groofe }
       else
         format.html { render :new }
@@ -65,6 +64,10 @@ class GroovesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_groofe
       @groofe = Groove.find(params[:id])
+    end
+
+    def set_lot
+      @lot = Lot.find(params[:lot_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

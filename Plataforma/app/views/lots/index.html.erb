@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lots</h1>
+<h1>Lotes</h1>
+<a class="btn-floating btn-large waves-effect waves-light green" <%= link_to '+', new_farm_lot_path %><i class="material-icons"></i></a>
+<td><%= link_to 'Volver', farms_path %></td>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Farm</th>
+      <th>Nombre</th>
+      <th>Ubicación</th>
+      <th>Cultivo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,8 +21,9 @@
         <td><%= lot.location %></td>
         <td><%= lot.farm.name %></td>
         <td><%= link_to 'Ver surcos', farm_lot_grooves_path(lot_id: lot.id) %> </td>
-        <td><%= link_to 'Edit', edit_farm_lot_path(id: lot.id) %></td>
-        <td><%= link_to 'Destroy', controller: "lots", method: "destroy", data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_farm_lot_path(id: lot.id) %></td>
+
+        <td><%= link_to 'Destruir', controller: "lots", method: "delete", data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Lot', new_farm_lot_path %>
+
