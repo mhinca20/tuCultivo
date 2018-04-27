@@ -5,7 +5,7 @@ class GroovesController < ApplicationController
   # GET /grooves
   # GET /grooves.json
   def index
-    @grooves = @lot.groofe
+    @grooves = Groove.where(lot_id: @lot.id)
   end
   # GET /grooves/1
   # GET /grooves/1.json

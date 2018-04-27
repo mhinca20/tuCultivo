@@ -1,6 +1,6 @@
 class PlagueReportsController < ApplicationController
   protect_from_forgery with: :null_session
-  before_action :set_groove, only: [:create, :index]
+  before_action :set_groove, only: [:create, :index,:show]
   before_action :set_plague_report, only: [:show]
 
   def create
@@ -9,14 +9,19 @@ class PlagueReportsController < ApplicationController
 
   def index
     @plague_reports = @groove.plague_reports
-    @data = [["hola","dos"]]
-    @datos = PlagueReport.all
-    @datos.each{|d| @data.push([d.reportDate.to_s,d.quantity.to_f])}   
   end
 
   def show
-
+    plagues_n = @plague_report.quantity
+    no_plagues_n = @groove.quantity-plagues_n
+    gon.graphic_data = [
+      ['Estado','Cantidad'],
+      ['Con plagas',plagues_n],
+      ['Sin plagas',no_plagues_n]
+    ]
+    gon.reportDate = @plague_report.reportDate
   end
+  
   private
   def plague_reports_params
     params.require(:plague_report).permit(:quantity, :reportDate, :description)
