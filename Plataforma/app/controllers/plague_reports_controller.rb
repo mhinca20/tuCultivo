@@ -9,6 +9,9 @@ class PlagueReportsController < ApplicationController
 
   def index
     @plague_reports = @groove.plague_reports
+    gon.surco_id = @groove.id
+    gon.column_chart_data = @plague_reports.map { |a| [a.reportDate,a.quantity] } 
+
   end
 
   def show
