@@ -13,6 +13,9 @@
             <%= link_to 'Mis nodos', nodes_path, method: :get %>
         </li>
         <li>
+           <%= link_to 'Mis cultivos', farms_path, method: :get %> 
+        </li>
+        <li>
             <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
         </li>
         <% else %>

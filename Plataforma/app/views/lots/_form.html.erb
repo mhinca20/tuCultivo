@@ -1,0 +1,31 @@
+<%= form_with(url: farm_lots_path, local: true) do |form| %>
+  <% if lot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lot.errors.count, "error") %> prohibited this lot from being saved:</h2>
+
+      <ul>
+      <% lot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= text_field :lot,:name, id: :lot_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= text_field :lot,:location, id: :lot_location %>
+  </div>
+
+  <div class="field">
+    <%= hidden_field(:lot, :farm_id, value: @farm.id) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

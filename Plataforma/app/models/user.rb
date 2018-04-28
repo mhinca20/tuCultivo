@@ -7,4 +7,5 @@ class User < ApplicationRecord
          has_many :collaborations, inverse_of: :user
   has_many :nodes, through: :collaborations
   accepts_nested_attributes_for :collaborations
+  has_many :farms
 end
