@@ -1,23 +1,24 @@
 addons:
   postgresql: 9.2
   code_climate:
-      repo_token: 915fb7899aed5496ffa2b60cb9b6f208164427996dc2cbc3cd9b2b6cece668f0
+    repo_token: 915fb7899aed5496ffa2b60cb9b6f208164427996dc2cbc3cd9b2b6cece668f0
 after_success:
-  - bundle exec codeclimate-test-reporter
+- bundle exec codeclimate-test-reporter
 before_script:
-  - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database travis_ci_test;' -U postgres
+- cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
 dist: trusty
 language: ruby
 rvm:
-  - 2.4.1
+- 2.4.1
 script:
-  - bundle exec rails db:migrate RAILS_ENV=test
+- bundle exec rails db:migrate RAILS_ENV=test
 deploy:
   provider: heroku
-  api_key: 
-    secure: afe82543-057f-4134-a5ec-d41edcee13a1
+  app: tucultivo
+  api_key:
+    secure: QA6wCxJ++gOBJ/bCd6K9ZZjYTHL93V7I/dVvahLwYOaj9oMyuSrRPVlcM0h0DzgbthS4VKyACOei6fCHh3Y5oSQ3d2wYVRp8McX8jiUtKL2CKvf4BuG4eGZ8nHKf80Kx37K1BIhUS+sfn0IoqeR4St7a69paZ5iq33cXVCJYLImQBWGgh+cpXt37qHZsj45keDScEUe+/L1KEJ9Gd0aBrLbADYt9Km/m8esTWEAIZ0O+B/K9PC6/teW3qgrW4s5fVB6QutSCk3BLuVcS2nX4uHs3GjTafm/eLTrphRdSSd6kPwhCTagylTHMrAQQFUyhO7myy28xMHOZ236dXXzgHsSJSKSb9tuBP89TA2wTNuOXUqRYawwtbDkm4CilrAd16sCdDNeZ7yMsvYk1K+D+UYVfs8LG/YfOjoFEfDykrh7BEBr34SB6yGanmNMS5t8Te874Q/y5Is5ClpOcwmyoDqJpmjBFOnUR1R9MwMyz9d6ja/Izaz6qkpeJRmtDcarrmFjekDuFUytkRGRvWdSg1mGSWUjGH0pDUtw1DmLG9T29kYnNvEbOD9NWzD2xADmluapuSswFHqbutYagxASKaLlWwzhTrUtMdgmAHo4lcG5xZrNYKr3yEn6XbiR+EAvCxDX88U64AC+VvEcmWkIRkgRdRAIOVsQRL58K1EFG8HY=
   on:
     branch: master
     rvm: 2.4.1
-  run: "rake db: migrate"
+  run: 'rake db: migrate'
