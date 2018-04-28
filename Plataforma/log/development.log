@@ -10217,3 +10217,64 @@ Processing by PlagueReportsController#index as HTML
 Completed 200 OK in 60ms (Views: 57.2ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/farms/3/lots" for 127.0.0.1 at 2018-04-28 09:09:49 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT "lots".* FROM "lots" WHERE "lots"."farm_id" = ?[0m  [["farm_id", 3]]
+  Rendered lots/index.html.erb within layouts/application (12.0ms)
+  Rendered partials/_navbar.html.erb (0.7ms)
+Completed 200 OK in 86ms (Views: 68.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/farms/3/lots/4/grooves" for 127.0.0.1 at 2018-04-28 09:10:00 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"3", "lot_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves" WHERE "grooves"."lot_id" = ?[0m  [["lot_id", 4]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered grooves/index.html.erb within layouts/application (6.6ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 67ms (Views: 62.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms/3/lots/4/grooves/7/plague_reports" for 127.0.0.1 at 2018-04-28 09:10:03 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"3", "lot_id"=>"4", "groofe_id"=>"7"}
+  [1m[36mGroove Load (0.1ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 7]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  Rendered plague_reports/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (3.1ms)
+Completed 200 OK in 70ms (Views: 65.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/farms/3/lots/4/grooves/7/plague_reports" for 127.0.0.1 at 2018-04-28 09:11:58 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"3", "lot_id"=>"4", "groofe_id"=>"7"}
+  [1m[36mGroove Load (0.1ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 7]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  Rendered plague_reports/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 58ms (Views: 54.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/farms/3/lots/4/grooves/7/plague_reports" for 127.0.0.1 at 2018-04-28 09:12:12 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"3", "lot_id"=>"4", "groofe_id"=>"7"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 7]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  Rendered plague_reports/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 49ms (Views: 42.8ms | ActiveRecord: 0.6ms)
+
+
