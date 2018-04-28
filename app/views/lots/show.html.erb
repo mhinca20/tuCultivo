@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @lot.name %>
+</p>
+
+<p>
+  <strong>Ubicación:</strong>
+  <%= @lot.location %>
+</p>
+
+<p>
+  <strong>Cultivo:</strong>
+  <%= @lot.farm.name %>
+</p>
+
+<%= link_to 'Ver surcos', farm_lot_grooves_path(lot_id: @lot.id) %> 
+
+<%= link_to 'Editar', edit_farm_lot_path(@lot) %> |
+<%= link_to 'Volver', farm_lots_path %>

@@ -1,0 +1,2 @@
+module PlagueReportsHelper
+end

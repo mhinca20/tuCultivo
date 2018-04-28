@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @groofe.quantity %>
+</p>
+
+<p>
+  <strong>Lot:</strong>
+  <%= @groofe.lot %>
+</p>
+
+<%= link_to 'Editar', edit_groofe_path(@groofe) %> |
+<%= link_to 'Volver', grooves_path %>
