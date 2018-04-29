@@ -2,11 +2,62 @@
 
 
 <h4>Sensors</h4>
+<th>Encender ventilación</th>
+<label class="switch switch-primary">
+     <input type="checkbox" unchecked name="validacion" id="01" data-toggle="toggle" onclick="ventilacion(this)">
+    <span></span>
+</div>
+<script type="text/javascript">
 
+  function ventilacion(validacion)
+  {
+   if(validacion.checked) {
+     alert('Has encendido la ventilación del invernadero');
+    }else{
+     alert('Has apagado la ventilación del invernadero');
+    }
+  }
+
+</script>
+</label>
+<th>Encender riego</th>
+<label class="switch switch-primary">
+     <input type="checkbox" unchecked name="riego" id="02" data-toggle="toggle" onclick="riego(this)">
+    <span></span>
+  <script type="text/javascript">
+
+  function riego(riego)
+  {
+   if(riego.checked) {
+     alert('Has encendido el riego del invernadero');
+    }else{
+     alert('Has apagado el riego del invernadero');
+    }
+  }
+
+</script>
+</label>
+<th>Levantar cortinas</th>
+<label class="switch switch-primary">
+     <input type="checkbox" unchecked name="cortina" id="03" data-toggle="toggle" onclick="cortina(this)">
+    <span></span>
+    <script type="text/javascript">
+
+  function cortina(cortina)
+  {
+   if(cortina.checked) {
+     alert('Has levantado las cortinas del invernadero');
+    }else{
+     alert('Has bajado las cortinas del invernadero');
+    }
+  }
+
+</script>
+</label>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nombre</th>
       <th colspan="3"></th>
     </tr>
   </thead>
