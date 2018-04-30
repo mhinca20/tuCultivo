@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     resources :lots do 
       resources :grooves do 
         resources :plague_reports
-        Build type disabled via repository settings (push). 
       end
     end  
   end
