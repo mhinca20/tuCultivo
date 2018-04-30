@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       end
     end  
   end
-  
+  post '/grooves/:groofe_id/reports', to: 'plague_reports#create'
  
   resources :nodes do
     resources :sensors
@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   end
 
   post '/sensors/:id/values', to: 'sensors#create_value'
-  post '/grooves/:groofe_id/reports', to: 'plague_reports#create'
+  
   root to: "farms#index"
 end
