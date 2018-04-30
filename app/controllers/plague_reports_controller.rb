@@ -64,6 +64,6 @@ class PlagueReportsController < ApplicationController
   end
 
   def set_groove
-    @groove = Groove.find(params[:groove_id])
+    @groove = Groove.find(params[:groofe_id])
   end
 end
