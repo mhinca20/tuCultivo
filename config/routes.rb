@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
   post '/grooves/:groofe_id/reports', to: 'plague_reports#create'
  
+
+
   resources :nodes do
     resources :sensors
     delete "/sensors/:id", to: "sensors#destroy", as:"delete_sensor"
@@ -18,6 +20,5 @@ Rails.application.routes.draw do
   end
 
   post '/sensors/:id/values', to: 'sensors#create_value'
-  
   root to: "farms#index"
 end
