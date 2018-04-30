@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       end
     end  
   end
+
   post '/grooves/:groofe_id/reports', to: 'plague_reports#create'
 
   resources :nodes do
