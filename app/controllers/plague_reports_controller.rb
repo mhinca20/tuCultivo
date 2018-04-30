@@ -2,9 +2,30 @@ class PlagueReportsController < ApplicationController
   protect_from_forgery with: :null_session
   before_action :set_groove, only: [:create, :index,:show]
   before_action :set_plague_report, only: [:show]
+  before_action :set_plague_report_by_date, only: [:create]
 
   def create
-    @plague_report = @groove.plague_reports.create(plague_reports_params)
+    if @plague_report.blank?
+      p "No hay reporte en esa fecha, creando uno..."
+      @plague_report = @groove.plague_reports.new(plague_reports_params)    
+      if new_report_params[:result] == true
+        @plague_report.quantity = 1
+      else
+        @plague_report.quantity = 0
+      end   
+      if @plague_report.save
+        p "Operación realizada en plague reports"
+      else
+        p "Error realizando operación create en plague reports"
+      end
+    else
+      p "Reporte encontrado"
+      if new_report_params[:result] == true
+        p "Encontró plaga"
+        @plague_report.update(quantity: @plague_report.quantity +=1) 
+      end    
+    end
+  
   end
 
   def index
@@ -27,11 +48,19 @@ class PlagueReportsController < ApplicationController
   
   private
   def plague_reports_params
-    params.require(:plague_report).permit(:quantity, :reportDate, :description)
+    params.require(:plague_report).permit(:reportDate)
   end
 
   def set_plague_report
     @plague_report = PlagueReport.find(params[:id])
+  end
+
+  def set_plague_report_by_date
+    @plague_report = PlagueReport.find_by(reportDate: plague_reports_params[:reportDate])
+  end
+
+  def new_report_params
+    params.require(:plague_report).permit(:result)
   end
 
   def set_groove
