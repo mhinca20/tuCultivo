@@ -4,12 +4,11 @@ Rails.application.routes.draw do
     resources :lots do 
       resources :grooves do 
         resources :plague_reports
+        Build type disabled via repository settings (push). 
       end
     end  
   end
   post '/grooves/:groofe_id/reports', to: 'plague_reports#create'
- 
-
 
   resources :nodes do
     resources :sensors
