@@ -2,15 +2,17 @@ class PlagueReportsController < ApplicationController
   protect_from_forgery with: :null_session
   before_action :set_groove, only: [:create, :index,:show]
   before_action :set_plague_report, only: [:show]
-  # before_action :set_plague_report_by_date, only: [:create]
+  before_action :set_plague_report_by_date, only: [:create]
 
   def create
     if @plague_report.blank?
-
       p "No hay reporte en esa fecha, creando uno..."
       @plague_report = @groove.plague_reports.new(plague_reports_params)    
-      @plague_report.quantity = 1
-      # @plague_report.date = @plague_reports.date.to_date
+      if new_report_params[:result] == true
+        @plague_report.quantity = 1
+      else
+        @plague_report.quantity = 0
+      end   
       if @plague_report.save
         p "Operación realizada en plague reports"
       else
@@ -58,7 +60,7 @@ class PlagueReportsController < ApplicationController
   end
 
   def new_report_params
-    params.require(:plague_report).permit(:result,:reportDate)
+    params.require(:plague_report).permit(:result)
   end
 
   def set_groove
