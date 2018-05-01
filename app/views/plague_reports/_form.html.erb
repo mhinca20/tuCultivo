@@ -1,0 +1,15 @@
+<%= form_with(url: find_reports_path, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :initial_date %>
+    <%= text_field :dates,:initial_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :final_date %>
+    <%= text_field :dates,:final_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

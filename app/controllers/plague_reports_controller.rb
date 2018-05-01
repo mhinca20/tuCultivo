@@ -35,7 +35,6 @@ class PlagueReportsController < ApplicationController
     @plague_reports = @groove.plague_reports
     gon.surco_id = @groove.id
     gon.column_chart_data = @plague_reports.map { |a| [a.reportDate,a.quantity] } 
-
   end
 
   def show
@@ -56,7 +55,12 @@ class PlagueReportsController < ApplicationController
 #      format.json { render :show, status: :created, location: @user }
   end
   
-  
+  def find_reports
+    dates = params[:dates]
+    p initial_date = params[:dates][:initial_date]
+    p final_date = params[:dates][:final_date]
+    p @plague_reports = PlagueReport.where(reportDate: initial_date..final_date)
+  end
   private
 
   def plague_reports_params
@@ -69,7 +73,7 @@ class PlagueReportsController < ApplicationController
     @user = Farm.find(params[:farm_id]).user
     #p "email:" + @user.email
   end
-
+  
   def set_plague_report
     @plague_report = PlagueReport.find(params[:id])
   end
