@@ -58,9 +58,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # agregadas
 gem 'devise'
 gem 'rails-erd', require: false, group: :development
-gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
-gem 'materialize-sass', '~> 1.0.0.alpha4'
+
 gem 'gon'
+gem 'popper_js', '~> 1.12.9'
+
+gem 'bootstrap-sass', '~> 3.3.7'
+
 ruby "2.4.1"
+
 
