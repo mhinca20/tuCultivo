@@ -10800,3 +10800,656 @@ Processing by SensorsController#index as HTML
 Completed 200 OK in 168ms (Views: 159.2ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-05-01 08:21:24 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by FarmsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering farms/index.html.erb within layouts/application
+  [1m[36mFarm Load (3.9ms)[0m  [1m[34mSELECT "farms".* FROM "farms" WHERE "farms"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered farms/index.html.erb within layouts/application (65.6ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 942ms (Views: 814.3ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-05-01 08:21:56 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.8ms)[0m  [1m[34mSELECT "lots".* FROM "lots" WHERE "lots"."farm_id" = ?[0m  [["farm_id", 4]]
+  Rendered lots/index.html.erb within layouts/application (29.0ms)
+  Rendered partials/_navbar.html.erb (1.2ms)
+Completed 200 OK in 154ms (Views: 133.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/farms/4/lots/2/grooves" for 127.0.0.1 at 2018-05-01 08:22:29 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.4ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.7ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves" WHERE "grooves"."lot_id" = ?[0m  [["lot_id", 2]]
+  Rendered grooves/index.html.erb within layouts/application (4.7ms)
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 165ms (Views: 126.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/farms/4/lots/2/grooves" for 127.0.0.1 at 2018-05-01 08:22:44 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves" WHERE "grooves"."lot_id" = ?[0m  [["lot_id", 2]]
+  Rendered grooves/index.html.erb within layouts/application (3.4ms)
+  Rendered partials/_navbar.html.erb (1.3ms)
+Completed 200 OK in 122ms (Views: 114.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms/4/lots/2/grooves/new" for 127.0.0.1 at 2018-05-01 08:22:46 -0500
+Processing by GroovesController#new as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering grooves/new.html.erb within layouts/application
+  Rendered grooves/_form.html.erb (93.7ms)
+  Rendered grooves/new.html.erb within layouts/application (99.3ms)
+  Rendered partials/_navbar.html.erb (1.5ms)
+Completed 200 OK in 190ms (Views: 167.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/farms/4/lots/2/grooves" for 127.0.0.1 at 2018-05-01 08:22:48 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves" WHERE "grooves"."lot_id" = ?[0m  [["lot_id", 2]]
+  Rendered grooves/index.html.erb within layouts/application (1.9ms)
+  Rendered partials/_navbar.html.erb (0.8ms)
+Completed 200 OK in 87ms (Views: 80.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/farms/4/lots/2/grooves/new" for 127.0.0.1 at 2018-05-01 08:23:37 -0500
+Processing by GroovesController#new as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.3ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering grooves/new.html.erb within layouts/application
+  Rendered grooves/_form.html.erb (8.6ms)
+  Rendered grooves/new.html.erb within layouts/application (14.4ms)
+  Rendered partials/_navbar.html.erb (2.3ms)
+Completed 200 OK in 152ms (Views: 126.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/farms/4/lots/2/grooves" for 127.0.0.1 at 2018-05-01 08:23:46 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves" WHERE "grooves"."lot_id" = ?[0m  [["lot_id", 2]]
+  Rendered grooves/index.html.erb within layouts/application (4.0ms)
+  Rendered partials/_navbar.html.erb (1.4ms)
+Completed 200 OK in 89ms (Views: 81.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/farms/4/lots" for 127.0.0.1 at 2018-05-01 08:27:15 -0500
+Processing by LotsController#index as HTML
+  Parameters: {"farm_id"=>"4"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering lots/index.html.erb within layouts/application
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT "lots".* FROM "lots" WHERE "lots"."farm_id" = ?[0m  [["farm_id", 4]]
+  Rendered lots/index.html.erb within layouts/application (14.7ms)
+  Rendered partials/_navbar.html.erb (2.0ms)
+Completed 200 OK in 297ms (Views: 264.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/farms/4/lots/2/grooves" for 127.0.0.1 at 2018-05-01 08:27:16 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.3ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves" WHERE "grooves"."lot_id" = ?[0m  [["lot_id", 2]]
+  Rendered grooves/index.html.erb within layouts/application (3.0ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 84ms (Views: 76.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/farms/4/lots/2/grooves/new" for 127.0.0.1 at 2018-05-01 08:27:18 -0500
+Processing by GroovesController#new as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.3ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering grooves/new.html.erb within layouts/application
+  Rendered grooves/_form.html.erb (5.5ms)
+  Rendered grooves/new.html.erb within layouts/application (9.9ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 97ms (Views: 83.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/farms/4/lots/2/grooves" for 127.0.0.1 at 2018-05-01 08:27:22 -0500
+Processing by GroovesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QEUpAIGizF8u2fiUOQwlO/6BcC0k4qriKfwuiYJ5boV5iPgN0QhAaFGIYaS+9888aq6wL7/RWAXc6nUTcaOVdg==", "groofe"=>{"quantity"=>"10", "lot_id"=>"2"}, "commit"=>"Save ", "farm_id"=>"4", "lot_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLot Load (0.2ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "grooves" ("quantity", "lot_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["quantity", 10], ["lot_id", 2], ["created_at", "2018-05-01 13:27:22.188238"], ["updated_at", "2018-05-01 13:27:22.188238"]]
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/farms/4/lots/2/grooves
+Completed 302 Found in 31ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/farms/4/lots/2/grooves" for 127.0.0.1 at 2018-05-01 08:27:22 -0500
+Processing by GroovesController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLot Load (0.1ms)[0m  [1m[34mSELECT  "lots".* FROM "lots" WHERE "lots"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering grooves/index.html.erb within layouts/application
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT "grooves".* FROM "grooves" WHERE "grooves"."lot_id" = ?[0m  [["lot_id", 2]]
+  Rendered grooves/index.html.erb within layouts/application (3.2ms)
+  Rendered partials/_navbar.html.erb (1.0ms)
+Completed 200 OK in 84ms (Views: 77.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 08:27:27 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 8]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  Rendered plague_reports/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (2.7ms)
+Completed 200 OK in 118ms (Views: 100.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:00:12 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 8]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  Rendered plague_reports/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (33.4ms)
+Completed 200 OK in 256ms (Views: 205.4ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:02:29 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reporDate"=>"2018-05-01", "result"=>"true"}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (1.3ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameters: :reporDate, :result
+  [1m[36mPlagueReport Load (1.4ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Unpermitted parameters: :reporDate, :result
+Unpermitted parameter: :reporDate
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "plague_reports" ("quantity", "groove_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["quantity", 0], ["groove_id", 8], ["created_at", "2018-05-01 14:02:29.354767"], ["updated_at", "2018-05-01 14:02:29.354767"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering plague_reports/create.html.erb within layouts/application
+  Rendered plague_reports/create.html.erb within layouts/application (3.9ms)
+  Rendered partials/_navbar.html.erb (13.0ms)
+Completed 200 OK in 306ms (Views: 202.2ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:02:37 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPlagueReport Load (0.4ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 8]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  Rendered plague_reports/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (4.9ms)
+Completed 200 OK in 147ms (Views: 136.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:03:34 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 8]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  Rendered plague_reports/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (3.0ms)
+Completed 200 OK in 136ms (Views: 126.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:04:01 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>"true"}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+Unpermitted parameter: :result
+Unpermitted parameter: :reportDate
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "plague_reports" ("quantity", "reportDate", "groove_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["quantity", 0], ["reportDate", "2018-05-01"], ["groove_id", 8], ["created_at", "2018-05-01 14:04:01.987132"], ["updated_at", "2018-05-01 14:04:01.987132"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering plague_reports/create.html.erb within layouts/application
+  Rendered plague_reports/create.html.erb within layouts/application (0.5ms)
+  Rendered partials/_navbar.html.erb (1.8ms)
+Completed 200 OK in 113ms (Views: 93.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:04:06 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 8]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  Rendered plague_reports/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (2.5ms)
+Completed 200 OK in 83ms (Views: 67.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:04:33 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>true}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+Unpermitted parameter: :reportDate
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (uninitialized constant PlagueReportsController::ExampleMailer):
+  
+app/controllers/plague_reports_controller.rb:52:in `send_alert'
+app/controllers/plague_reports_controller.rb:26:in `create'
+Started GET "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:05:08 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 8]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  Rendered plague_reports/index.html.erb within layouts/application (3.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (4.2ms)
+Completed 200 OK in 269ms (Views: 260.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:06:01 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>true}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.3ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+Unpermitted parameter: :reportDate
+ReportMailer#sample_email: processed outbound mail in 3.1ms
+Completed 401 Unauthorized in 493ms (ActiveRecord: 3.3ms)
+
+
+  
+NoMethodError (undefined method `email' for nil:NilClass):
+  
+app/mailers/report_mailer.rb:6:in `sample_email'
+app/controllers/plague_reports_controller.rb:52:in `send_alert'
+app/controllers/plague_reports_controller.rb:26:in `create'
+  [1m[36mFarm Load (0.3ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:12:38 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>true}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+Unpermitted parameter: :reportDate
+ReportMailer#sample_email: processed outbound mail in 3.1ms
+Completed 401 Unauthorized in 141ms (ActiveRecord: 3.0ms)
+
+
+  
+NoMethodError (undefined method `email' for nil:NilClass):
+  
+app/mailers/report_mailer.rb:6:in `sample_email'
+app/controllers/plague_reports_controller.rb:53:in `send_alert'
+app/controllers/plague_reports_controller.rb:27:in `create'
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:14:50 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>true}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+Unpermitted parameter: :reportDate
+ReportMailer#sample_email: processed outbound mail in 1.7ms
+Completed 401 Unauthorized in 37ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `email' for nil:NilClass):
+  
+app/mailers/report_mailer.rb:6:in `sample_email'
+app/controllers/plague_reports_controller.rb:53:in `send_alert'
+app/controllers/plague_reports_controller.rb:27:in `create'
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:15:30 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>true}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.1ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+Unpermitted parameter: :reportDate
+ReportMailer#sample_email: processed outbound mail in 1.1ms
+Completed 401 Unauthorized in 32ms (ActiveRecord: 2.1ms)
+
+
+  
+NoMethodError (undefined method `email' for nil:NilClass):
+  
+app/mailers/report_mailer.rb:6:in `sample_email'
+app/controllers/plague_reports_controller.rb:53:in `send_alert'
+app/controllers/plague_reports_controller.rb:27:in `create'
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:16:39 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>true}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+Unpermitted parameter: :reportDate
+ReportMailer#sample_email: processed outbound mail in 2.0ms
+Completed 401 Unauthorized in 43ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `email' for nil:NilClass):
+  
+app/mailers/report_mailer.rb:6:in `sample_email'
+app/controllers/plague_reports_controller.rb:53:in `send_alert'
+app/controllers/plague_reports_controller.rb:27:in `create'
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:19:58 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>true}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.1ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+Unpermitted parameter: :reportDate
+ReportMailer#sample_email: processed outbound mail in 1.6ms
+Completed 401 Unauthorized in 37ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `email' for nil:NilClass):
+  
+app/mailers/report_mailer.rb:6:in `sample_email'
+app/controllers/plague_reports_controller.rb:53:in `send_alert'
+app/controllers/plague_reports_controller.rb:27:in `create'
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:21:00 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>true}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+Unpermitted parameter: :reportDate
+ReportMailer#sample_email: processed outbound mail in 2.0ms
+Completed 401 Unauthorized in 36ms (ActiveRecord: 2.7ms)
+
+
+  
+NoMethodError (undefined method `email' for nil:NilClass):
+  
+app/mailers/report_mailer.rb:6:in `sample_email'
+app/controllers/plague_reports_controller.rb:53:in `send_alert'
+app/controllers/plague_reports_controller.rb:27:in `create'
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:25:26 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>true}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.1ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.1ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :reportDate
+  Rendering report_mailer/sample_email.html.erb within layouts/mailer
+  Rendered report_mailer/sample_email.html.erb within layouts/mailer (1.5ms)
+  Rendering report_mailer/sample_email.text.erb within layouts/mailer
+  Rendered report_mailer/sample_email.text.erb within layouts/mailer (0.8ms)
+ReportMailer#sample_email: processed outbound mail in 697.6ms
+Sent mail to msierr37@eafit.edu.co (27.3ms)
+Date: Tue, 01 May 2018 09:25:27 -0500
+From: tucultivo1997@gmail.com
+To: msierr37@eafit.edu.co
+Message-ID: <5ae878d7b8941_44793fcb9f81ce8c50348@Marcoss-MacBook-Air.mail>
+Subject: Sample Email
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ae878d7b5784_44793fcb9f81ce8c50292";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ae878d7b5784_44793fcb9f81ce8c50292
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi 
+Sample mail sent using smtp.
+
+----==_mimepart_5ae878d7b5784_44793fcb9f81ce8c50292
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi </h1>
+    <p>
+      Sample mail sent using smtp.
+    </p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5ae878d7b5784_44793fcb9f81ce8c50292--
+
+Completed 401 Unauthorized in 817ms (ActiveRecord: 4.3ms)
+
+
+  
+ArgumentError (too few arguments):
+  
+app/controllers/plague_reports_controller.rb:55:in `format'
+app/controllers/plague_reports_controller.rb:55:in `send_alert'
+app/controllers/plague_reports_controller.rb:27:in `create'
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:28:06 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>true}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.2ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.2ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :reportDate
+  Rendering report_mailer/sample_email.html.erb within layouts/mailer
+  Rendered report_mailer/sample_email.html.erb within layouts/mailer (1.0ms)
+  Rendering report_mailer/sample_email.text.erb within layouts/mailer
+  Rendered report_mailer/sample_email.text.erb within layouts/mailer (0.5ms)
+ReportMailer#sample_email: processed outbound mail in 69.3ms
+Sent mail to msierr37@eafit.edu.co (5.4ms)
+Date: Tue, 01 May 2018 09:28:07 -0500
+From: tucultivo1997@gmail.com
+To: msierr37@eafit.edu.co
+Message-ID: <5ae879773df39_44793fcb9f81ce005055b@Marcoss-MacBook-Air.mail>
+Subject: Sample Email
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ae879773cbf2_44793fcb9f81ce00504d6";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ae879773cbf2_44793fcb9f81ce00504d6
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi 
+Sample mail sent using smtp.
+
+----==_mimepart_5ae879773cbf2_44793fcb9f81ce00504d6
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi </h1>
+    <p>
+      Sample mail sent using smtp.
+    </p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5ae879773cbf2_44793fcb9f81ce00504d6--
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroove Load (0.1ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "plague_reports" SET "quantity" = ?, "updated_at" = ? WHERE "plague_reports"."id" = ?[0m  [["quantity", 1], ["updated_at", "2018-05-01 14:28:07.264099"], ["id", 10]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering plague_reports/create.html.erb within layouts/application
+  Rendered plague_reports/create.html.erb within layouts/application (0.6ms)
+  Rendered partials/_navbar.html.erb (3.3ms)
+Completed 200 OK in 504ms (Views: 156.2ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:30:50 -0500
+Processing by PlagueReportsController#create as HTML
+  Parameters: {"plague_report"=>{"reportDate"=>"2018-05-01", "result"=>true}, "farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+Can't verify CSRF token authenticity.
+  [1m[36mGroove Load (0.3ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Unpermitted parameter: :result
+  [1m[36mPlagueReport Load (0.3ms)[0m  [1m[34mSELECT  "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."reportDate" = ? LIMIT ?[0m  [["reportDate", "2018-05-01"], ["LIMIT", 1]]
+  [1m[36mFarm Load (0.2ms)[0m  [1m[34mSELECT  "farms".* FROM "farms" WHERE "farms"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :reportDate
+  Rendering report_mailer/sample_email.html.erb within layouts/mailer
+  Rendered report_mailer/sample_email.html.erb within layouts/mailer (1.2ms)
+  Rendering report_mailer/sample_email.text.erb within layouts/mailer
+  Rendered report_mailer/sample_email.text.erb within layouts/mailer (0.5ms)
+ReportMailer#sample_email: processed outbound mail in 55.4ms
+Sent mail to msierragallego@gmail.com (4.6ms)
+Date: Tue, 01 May 2018 09:30:50 -0500
+From: tucultivo1997@gmail.com
+To: msierragallego@gmail.com
+Message-ID: <5ae87a1ac63ca_44793fcb9f81cf18507d8@Marcoss-MacBook-Air.mail>
+Subject: Sample Email
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5ae87a1ac51c7_44793fcb9f81cf185068a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5ae87a1ac51c7_44793fcb9f81cf185068a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi 
+Sample mail sent using smtp.
+
+----==_mimepart_5ae87a1ac51c7_44793fcb9f81cf185068a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi </h1>
+    <p>
+      Sample mail sent using smtp.
+    </p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_5ae87a1ac51c7_44793fcb9f81cf185068a--
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroove Load (0.1ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "plague_reports" SET "quantity" = ?, "updated_at" = ? WHERE "plague_reports"."id" = ?[0m  [["quantity", 2], ["updated_at", "2018-05-01 14:30:50.821289"], ["id", 10]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  Rendering plague_reports/create.html.erb within layouts/application
+  Rendered plague_reports/create.html.erb within layouts/application (0.5ms)
+  Rendered partials/_navbar.html.erb (2.9ms)
+Completed 200 OK in 325ms (Views: 133.0ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/farms/4/lots/2/grooves/8/plague_reports" for 127.0.0.1 at 2018-05-01 09:35:32 -0500
+Processing by PlagueReportsController#index as HTML
+  Parameters: {"farm_id"=>"4", "lot_id"=>"2", "groofe_id"=>"8"}
+  [1m[36mGroove Load (0.4ms)[0m  [1m[34mSELECT  "grooves".* FROM "grooves" WHERE "grooves"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mPlagueReport Load (0.3ms)[0m  [1m[34mSELECT "plague_reports".* FROM "plague_reports" WHERE "plague_reports"."groove_id" = ?[0m  [["groove_id", 8]]
+  Rendering plague_reports/index.html.erb within layouts/application
+  Rendered plague_reports/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered partials/_navbar.html.erb (3.4ms)
+Completed 200 OK in 135ms (Views: 118.7ms | ActiveRecord: 1.0ms)
+
+

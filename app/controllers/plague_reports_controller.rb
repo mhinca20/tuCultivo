@@ -3,6 +3,7 @@ class PlagueReportsController < ApplicationController
   before_action :set_groove, only: [:create, :index,:show]
   before_action :set_plague_report, only: [:show]
   before_action :set_plague_report_by_date, only: [:create]
+  before_action :set_user, only: [:create]
 
   def create
     if @plague_report.blank?
@@ -10,6 +11,7 @@ class PlagueReportsController < ApplicationController
       @plague_report = @groove.plague_reports.new(plague_reports_params)    
       if new_report_params[:result] == true
         @plague_report.quantity = 1
+        send_alert
       else
         @plague_report.quantity = 0
       end   
@@ -22,6 +24,7 @@ class PlagueReportsController < ApplicationController
       p "Reporte encontrado"
       if new_report_params[:result] == true
         p "Encontró plaga"
+        send_alert
         @plague_report.update(quantity: @plague_report.quantity +=1) 
       end    
     end
@@ -46,9 +49,25 @@ class PlagueReportsController < ApplicationController
     gon.reportDate = @plague_report.reportDate
   end
   
+  def send_alert
+    ReportMailer.sample_email(@user).deliver
+
+#      format.html { redirect_to farm_lot_, notice: 'Hay una plaga en el cultivo' }
+#      format.json { render :show, status: :created, location: @user }
+  end
+  
+  
   private
+
   def plague_reports_params
     params.require(:plague_report).permit(:reportDate)
+  end
+
+  def set_user
+    p "holaaaaaaaaa"
+    p "farm id: #{params[:farm_id]}"
+    @user = Farm.find(params[:farm_id]).user
+    #p "email:" + @user.email
   end
 
   def set_plague_report
