@@ -56,7 +56,7 @@ class PlagueReportsController < ApplicationController
   end
 
   def set_plague_report_by_date
-    @plague_report = PlagueReport.find_by(reportDate: plague_reports_params[:reportDate])
+    @plague_report = @groove.plague_reports.find_by(reportDate: plague_reports_params[:reportDate])
   end
 
   def new_report_params
