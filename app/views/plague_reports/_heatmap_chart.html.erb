@@ -1,0 +1,61 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+<script src="https://code.highcharts.com/modules/treemap.js"></script>
+<div id="container"></div>
+
+<script type="text/javascript">
+Highcharts.chart('container', {
+  colorAxis: {
+    minColor: '#FFFFFF',
+    maxColor: Highcharts.getOptions().colors[8]
+  },
+  series: [{
+    type: 'treemap',
+    layoutAlgorithm: 'squarified',
+    data: [{
+      name: 'Planta 1',
+      value: 6,
+      colorValue: 7
+    }, {
+      name: 'Planta 2',
+      value: 6,
+      colorValue: 2
+    }, {
+      name: 'Planta 3',
+      value: 4,
+      colorValue: 7
+    }, {
+      name: 'Planta 4',
+      value: 3,
+      colorValue: 4
+    }, {
+      name: 'Planta 5',
+      value: 2,
+      colorValue: 7
+    }, {
+      name: 'Planta 6',
+      value: 2,
+      colorValue: 7
+    }, {
+      name: 'Planta 7',
+      value: 1,
+      colorValue: 1
+    }, {
+      name: 'Planta 8',
+      value: 1,
+      colorValue: 1
+    }, {
+      name: 'Planta 9',
+      value: 1,
+      colorValue: 1
+    }, {
+      name: 'Planta 10',
+      value: 1,
+      colorValue: 1
+    }]
+  }],
+  title: {
+    text: 'Mapa de calor'
+  }
+});
+</script>
