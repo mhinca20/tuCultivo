@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   resources :farms do
     resources :lots do 
       resources :grooves do 
-        resources :plague_reports
+        post 'plague_reports/find', to: 'plague_reports#find_reports', as: 'find'
+        resources :plague_reports 
       end
     end  
   end
 
   post '/grooves/:groofe_id/reports', to: 'plague_reports#create'
-  post '/reports/find', to: 'plague_reports#find_reports', as: 'find_reports'
+
   resources :nodes do
     resources :sensors
     delete "/sensors/:id", to: "sensors#destroy", as:"delete_sensor"

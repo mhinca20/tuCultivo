@@ -62,7 +62,6 @@ gem 'jquery-rails'
 
 gem 'gon'
 gem 'popper_js', '~> 1.12.9'
-
 gem 'bootstrap-sass', '~> 3.3.7'
 
 ruby "2.4.1"

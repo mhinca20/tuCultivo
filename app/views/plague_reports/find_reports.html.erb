@@ -1,20 +1,25 @@
-<table>
-  <thead>
-    <tr>
-      <th>Fecha</th>
-      <th>Cantidad de plagas</th>
-      
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @plague_reports.each do |report| %> 
+<div class="center">
+  <%= render 'form', plague_report: @plague_report %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= report.reportDate %></td>
-        <td><%= report.quantity %></td>
-        <td><%= link_to 'Mostrar', farm_lot_groofe_plague_report_path(id: report.id) %></td>
+        <th>Fecha</th>
+        <th>Cantidad de plagas</th>
+        
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @plague_reports.each do |report| %>
+        <tr>
+          <td><%= report.reportDate %></td>
+          <td><%= report.quantity %></td>
+          <td><%= link_to 'Mostrar', farm_lot_groofe_plague_report_path(id: report.id) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= render 'column_chart', plague_report: @plague_report %>
+</div>
+

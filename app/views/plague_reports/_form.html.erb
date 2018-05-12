@@ -1,15 +1,16 @@
-<%= form_with(url: find_reports_path, local: true) do |form| %>
+<%= form_with(url:   farm_lot_groofe_find_path, local: true) do |form| %>
+  <h3>Buscar</h3>
   <div class="field">
     <%= form.label :initial_date %>
-    <%= text_field :dates,:initial_date %>
+    <%= text_field :dates,:initial_date, class:"form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :final_date %>
-    <%= text_field :dates,:final_date %>
+    <%= text_field :dates,:final_date, class:"form-control" %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Buscar",style:'color:#FFFFFF;',class:'btn btn-success left' %>
   </div>
 <% end %>
