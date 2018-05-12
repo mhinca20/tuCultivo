@@ -1,32 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="center">
+  <p id="notice"><%= notice %></p>
 
-<h1>Lotes del cultivo <%= @farm.name %></h1>
-<a class="btn-floating btn-large waves-effect waves-light green" <%= link_to '+', new_farm_lot_path %><i class="material-icons"></i></a>
-<td><%= link_to 'Volver', farms_path %></td>
+  <h1>Lotes del cultivo: <%= @farm.name%></h1>
+  <h2>Id del cultivo: <%= @farm.id%></h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Ubicación</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <%= link_to 'Crear lote', new_farm_lot_path, {style:'color:#FFFFFF;',class:'btn btn-success right-button'} %>
+  <%= link_to 'Volver', farms_path , {style:'color:#FFFFFF;',class:'btn btn-danger right-button'} %>
 
-  <tbody>
-    <% @lots.each do |lot| %>
+
+
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= lot.name %></td>
-        <td><%= lot.location %></td>
-        <td><%= link_to 'Ver surcos', farm_lot_grooves_path(lot_id: lot.id) %> </td>
-        <td><%= link_to 'Editar', edit_farm_lot_path(id: lot.id) %></td>
-
-        <td><%= link_to 'Destruir', controller: "lots", method: "delete", data: { confirm: 'Are you sure?' } %></td>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Ubicación</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @lots.each do |lot| %>
+        <tr>
+          <td><%= lot.id %></td>
+          <td><%= lot.name %></td>
+          <td><%= lot.location %></td>
+          <td><%= link_to 'Ver surcos', farm_lot_grooves_path(lot_id: lot.id) %> </td>
+          <td><%= link_to 'Editar', edit_farm_lot_path(id: lot.id) %></td>
 
+          <td><%= link_to 'Destruir', controller: "lots", method: "delete", data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+<div class="center">
 

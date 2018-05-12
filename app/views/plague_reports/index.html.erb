@@ -3,6 +3,28 @@
 <h1>Reporte Plagas Surco <%= @groove.id %></h1>
 <%= render 'form', plague_report: @plague_report %>
 <td><%= link_to 'Volver', farm_lot_grooves_path %></td>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Cantidad de plagas</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plague_reports.each do |report| %>
+      <tr>
+        <td><%= report.reportDate %></td>
+        <td><%= report.quantity %></td>
+        <td><%= link_to 'Mostrar', farm_lot_groofe_plague_report_path(id: report.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 
 <!--Load the AJAX API-->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
