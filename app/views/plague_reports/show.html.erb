@@ -6,9 +6,10 @@
   <%= @plague_report.description %>
 </p>
 <%= link_to 'Atrás', farm_lot_groofe_plague_reports_path %>
-<%= render 'heatmap_chart'%>
-<%= render 'heatline_chart' %>
-<%= render 'pie_chart' %>
+
+<%# <div><%= render 'heatmap_chart'%></div> %>
+<div class="left"><%= render 'heatline_chart' %></div>
+<div class="right"><%= render 'pie_chart' %></div>
 
 
 

@@ -6,7 +6,7 @@ class PlagueReportsController < ApplicationController
   before_action :set_user, only: [:create]
 
   def create
-    # se daña
+    # validar que location <= quantity
     if @plague_report.blank?
       p "No hay reporte en esa fecha, creando uno..."
       @plague_report = @groove.plague_reports.new(plague_reports_params)    
@@ -32,13 +32,30 @@ class PlagueReportsController < ApplicationController
   end
 
   def show
+    quantity = @groove.quantity
+    
+    # pie chart
     sick_plants_n = @plague_report.sick_plants.count
-    healthy_plants_n = @groove.quantity-sick_plants_n
+    healthy_plants_n = quantity-sick_plants_n
     gon.graphic_data = [
       ['Estado','Cantidad'],
       ['Sanas',healthy_plants_n],
       ['Enfermas',sick_plants_n]
     ]
+
+    data = []
+    (0..quantity-1).each_with_index do |i|
+      data.push([i,0,0])
+    end
+    print data
+
+    @plague_report.sick_plants.each do |plant|
+      data[plant.location] = [plant.location,0,1]
+    end
+
+    print data
+    # heatline chart
+    gon.heatline_data = data
   end
   
   def send_alert

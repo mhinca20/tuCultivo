@@ -3,7 +3,7 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 
-<div id="container1" style="height: 400px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
+<div id="container1" style="height: 400px; min-width: 600px; max-width: 800px; margin: 0 auto"></div>
 <script type="text/javascript">
     Highcharts.chart('container1', {
 
@@ -16,13 +16,13 @@
 
 
     title: {
-        text: 'Mapa de calor Surco con Ubicación'
+        text: 'Mapa de calor surco con Ubicación'
     },
 
     colorAxis: {
         min: 0,
-        minColor: '#FFFFFF',
-        maxColor: Highcharts.getOptions().colors[0]
+        minColor: '#31B404',
+        maxColor: '#8A0808'
     },
 
     legend: {
@@ -42,12 +42,12 @@
     },
 
     series: [{
-        name: 'Sales per employee',
+        name: 'Mapa de calor surco con ubicación',
         borderWidth: 1,
-        data: [[0, 0, 1], [1, 0, 1], [2, 0, 0], [3, 0, 1], [4, 0, 0], [5, 0, 0], [6, 0, 1], [7, 0, 1], [8, 0, 0], [9, 0, 1]],
+        data: gon.heatline_data,
         dataLabels: {
         enabled: true,
-        color: '#000000'
+        color: '#FFFFFF'
         }
     }]
 
