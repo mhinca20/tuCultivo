@@ -6,29 +6,22 @@ class PlagueReportsController < ApplicationController
   before_action :set_user, only: [:create]
 
   def create
+    # se daña
     if @plague_report.blank?
       p "No hay reporte en esa fecha, creando uno..."
       @plague_report = @groove.plague_reports.new(plague_reports_params)    
-      if new_report_params[:result] == true
-        @plague_report.quantity = 1
-        send_alert
-      else
-        @plague_report.quantity = 0
-      end   
       if @plague_report.save
         p "Operación realizada en plague reports"
+        sick_plant = @plague_report.sick_plants.create(sick_plant_params)
       else
         p "Error realizando operación create en plague reports"
       end
     else
-      p "Reporte encontrado"
-      if new_report_params[:result] == true
-        p "Encontró plaga"
-        send_alert
-        @plague_report.update(quantity: @plague_report.quantity +=1) 
-      end    
+      p "Reporte encontrado"  
+      sick_plant = @plague_report.sick_plants.create(sick_plant_params)
     end
-  
+    
+    send_alert
   end
 
   def index
@@ -36,16 +29,16 @@ class PlagueReportsController < ApplicationController
   end
 
   def column_chart_data(reports)
-    gon.column_chart_data = reports.map { |a| [a.reportDate,a.quantity] } 
+    gon.column_chart_data = reports.map { |a| [a.reportDate,a.sick_plants.count] } 
   end
 
   def show
-    plagues_n = @plague_report.quantity
-    no_plagues_n = @groove.quantity-plagues_n
+    sick_plants_n = @plague_report.sick_plants.count
+    healthy_plants_n = @groove.quantity-sick_plants_n
     gon.graphic_data = [
       ['Estado','Cantidad'],
-      ['Con plagas',plagues_n],
-      ['Sin plagas',no_plagues_n]
+      ['Enfermas',sick_plants_n],
+      ['Sanas',healthy_plants_n]
     ]
     gon.reportDate = @plague_report.reportDate
   end
@@ -70,6 +63,10 @@ class PlagueReportsController < ApplicationController
     params.require(:plague_report).permit(:reportDate)
   end
 
+  def sick_plant_params
+    params.require(:sick_plant).permit(:location)
+  end
+
   def set_user
     @user = Farm.find(params[:farm_id]).user
   end
@@ -82,10 +79,7 @@ class PlagueReportsController < ApplicationController
     @plague_report = PlagueReport.find_by(reportDate: plague_reports_params[:reportDate])
   end
 
-  def new_report_params
-    params.require(:plague_report).permit(:result)
-  end
-
+  
   def set_groove
     @groove = Groove.find(params[:groofe_id])
   end
