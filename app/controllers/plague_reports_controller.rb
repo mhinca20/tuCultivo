@@ -20,7 +20,6 @@ class PlagueReportsController < ApplicationController
       p "Reporte encontrado"  
       sick_plant = @plague_report.sick_plants.create(sick_plant_params)
     end
-    
     send_alert
   end
 
@@ -37,10 +36,9 @@ class PlagueReportsController < ApplicationController
     healthy_plants_n = @groove.quantity-sick_plants_n
     gon.graphic_data = [
       ['Estado','Cantidad'],
-      ['Enfermas',sick_plants_n],
-      ['Sanas',healthy_plants_n]
+      ['Sanas',healthy_plants_n],
+      ['Enfermas',sick_plants_n]
     ]
-    gon.reportDate = @plague_report.reportDate
   end
   
   def send_alert

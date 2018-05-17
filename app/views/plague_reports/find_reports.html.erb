@@ -14,7 +14,7 @@
       <% @plague_reports.each do |report| %>
         <tr>
           <td><%= report.reportDate %></td>
-          <td><%= report.quantity %></td>
+          <td><%= report.sick_plants.count %></td>
           <td><%= link_to 'Mostrar', farm_lot_groofe_plague_report_path(id: report.id) %></td>
         </tr>
       <% end %>
