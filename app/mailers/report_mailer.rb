@@ -3,6 +3,6 @@ class ReportMailer < ApplicationMailer
     
     def sample_email(user)
         @user = user
-        mail(to: @user.email, subject: 'Sample Email')
-      end
+        mail(to: user, subject: 'Sample Email')
+    end
 end

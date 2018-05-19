@@ -59,9 +59,9 @@ class PlagueReportsController < ApplicationController
   end
   
   def send_alert
-    ReportMailer.sample_email(@user).deliver
-#      format.html { redirect_to farm_lot_, notice: 'Hay una plaga en el cultivo' }
-#      format.json { render :show, status: :created, location: @user }
+    ReportMailer.sample_email('msierr37@eafit.edu.co').deliver
+        # format.html { redirect_to farm_lot_, notice: 'Hay una plaga en el cultivo' }
+        #format.json { render :show, status: :created, location: @user }
   end
   
   def find_reports
