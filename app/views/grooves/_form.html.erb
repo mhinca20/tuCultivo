@@ -13,14 +13,15 @@
 
   <div class="field">
     <%= form.label :quantity, "Cantidad" %>
-    <%= number_field :groofe,:quantity, id: :groofe_quantity %>
+    <%= number_field :groofe,:quantity, id: :groofe_quantity,class:"form-control" %>
   </div>
 
   <div class="field">
     <%= hidden_field(:groofe, :lot_id, value: @lot.id) %>
   </div>
-
+  <br>
+  
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Aceptar", {class:'btn btn-success right-button'} %>
   </div>
 <% end %>
