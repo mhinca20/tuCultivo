@@ -3,7 +3,10 @@
 <h3>Reporte del día <%= @plague_report.reportDate %></h3>
 <p>
   <strong>Descripción:</strong>
-  El surco <%= @plague_report.groove.name  %>
+  El surco <%=@plague_report.groove.id%> en el dia,  <%= @plague_report.reportDate %>
+  presentó un total de <%= @plague_report.sick_plants.count%> plantas afectadas.
+
+  Plantas afectadas: 
 </p>
 
 <%= link_to 'Atrás', farm_lot_groofe_plague_reports_path , {style:'color:#FFFFFF;',class:'btn btn-danger'} %>
