@@ -1,20 +1,22 @@
 <p id="notice"><%= notice %></p>
+<div class="center">
+  <h3>Reporte del día <%= @plague_report.reportDate %></h3>
+  <p>
+    <strong>Descripción:</strong>
+    El surco <%=@plague_report.groove.id%> en el dia,  <%= @plague_report.reportDate %>
+    presentó un total de <%= @plague_report.sick_plants.count%> plantas afectadas.
+    <br>
+    <strong>La posición de de las plantas afectadas en este surco es:</strong> 
+    <%= @sick_plants_l %>
+  </p>
 
-<h3>Reporte del día <%= @plague_report.reportDate %></h3>
-<p>
-  <strong>Descripción:</strong>
-  El surco <%=@plague_report.groove.id%> en el dia,  <%= @plague_report.reportDate %>
-  presentó un total de <%= @plague_report.sick_plants.count%> plantas afectadas.
+  <%= link_to 'Atrás', farm_lot_groofe_plague_reports_path , {style:'color:#FFFFFF;',class:'btn btn-danger right'} %>
 
-  Plantas afectadas: 
-</p>
-
-<%= link_to 'Atrás', farm_lot_groofe_plague_reports_path , {style:'color:#FFFFFF;',class:'btn btn-danger'} %>
-
-<%# <%= render 'heatmap_chart'%> %>
-<div class="left"><%= render 'heatline_chart' %></div>
-<div class="right"><%= render 'pie_chart' %></div>
-
+  <div>
+    <div class="left"><%= render 'graphics/heatline_chart' %></div>
+    <div class="right"><%= render 'graphics/pie_chart' %></div>
+  </div>
+</div>
 
 
 

@@ -1,6 +1,6 @@
 class PlagueReportsController < ApplicationController
   protect_from_forgery with: :null_session
-  before_action :set_groove, only: [:create, :index,:show]
+  before_action :set_groove, only: [:create, :index,:show,:find_reports]
   before_action :set_plague_report, only: [:show]
   before_action :set_plague_report_by_date, only: [:create]
   before_action :set_user, only: [:create]
@@ -18,7 +18,13 @@ class PlagueReportsController < ApplicationController
       end
     else
       p "Reporte encontrado"  
-      sick_plant = @plague_report.sick_plants.create(sick_plant_params)
+      @plague_report.sick_plants.find_by(sick_plant_params)
+      if @plague_report.present?
+        p "Si mijo"
+        # sick_plant = @plague_report.sick_plants.create(sick_plant_params)
+      else 
+        p 'no'
+      end
     end
     send_alert
   end
@@ -32,6 +38,7 @@ class PlagueReportsController < ApplicationController
   end
 
   def show
+    p @sick_plants_l = @plague_report.sick_plants.pluck(:location).join(",")
     quantity = @groove.quantity
     
     # pie chart
@@ -52,8 +59,7 @@ class PlagueReportsController < ApplicationController
     @plague_report.sick_plants.each do |plant|
       data[plant.location] = [plant.location,0,1]
     end
-
-    print data
+    
     # heatline chart
     gon.heatline_data = data
   end
@@ -68,7 +74,7 @@ class PlagueReportsController < ApplicationController
     dates = params[:dates]
     initial_date = params[:dates][:initial_date]
     final_date = params[:dates][:final_date]
-    @plague_reports = PlagueReport.where(reportDate: initial_date..final_date)
+    @plague_reports = @groove.plague_reports.where(reportDate: initial_date..final_date)
     column_chart_data(@plague_reports)
   end
 
@@ -91,7 +97,7 @@ class PlagueReportsController < ApplicationController
   end
 
   def set_plague_report_by_date
-    @plague_report = PlagueReport.find_by(reportDate: plague_reports_params[:reportDate])
+    @plague_report = @groove.plague_reports.find_by(reportDate: plague_reports_params[:reportDate])
   end
 
   

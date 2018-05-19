@@ -7,7 +7,6 @@
   <%= link_to 'Crear surco', new_farm_lot_groofe_path, {style:'color:#FFFFFF;',class:'btn btn-success right-button'} %>
   <%= link_to 'Volver', farm_lots_path , {style:'color:#FFFFFF;',class:'btn btn-danger right-button'} %>
 
-
   <table class="table">
     <thead>
       <tr>
@@ -31,4 +30,8 @@
   </table>
 
   <br>
+  
+  
+  <%= render 'graphics/heatline_chart' %>
+
 </div>

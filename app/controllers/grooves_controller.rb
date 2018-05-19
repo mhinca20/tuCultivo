@@ -6,6 +6,25 @@ class GroovesController < ApplicationController
   # GET /grooves.json
   def index
     @grooves = Groove.where(lot_id: @lot.id)
+    grooves_n = @grooves.count
+    
+    data = []
+    
+    @grooves.each_with_index do |groove,i|
+      if groove.plague_reports.present?
+        sick_plants = groove.plague_reports.last.sick_plants.pluck(:location)
+        (0..groove.quantity-1).each do |j|
+          if sick_plants.include?(j)
+            data.push([j,i,1])  
+          else
+            data.push([j,i,0])
+          end
+        end
+      end
+    end
+
+    gon.heatline_data = data
+    # heatline chart
   end
   # GET /grooves/1
   # GET /grooves/1.json
