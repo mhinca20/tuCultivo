@@ -5,7 +5,9 @@
   <% if @groove.plague_reports.present?  %>
     <%= render 'form', plague_report: @plague_report %>
     <div class="center">
-      <%= render 'graphics/column_chart', plague_report: @plague_report %>
+      <%if @plague_reports.present? %>
+        <%= render 'graphics/column_chart', plague_report: @plague_report %>
+      <%end %>
     </div>
   <% else %>
     <p class="center">Este surco no tiene reportes aún</p>
