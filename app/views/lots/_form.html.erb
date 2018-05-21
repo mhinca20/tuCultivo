@@ -12,20 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= text_field :lot,:name, id: :lot_name %>
+    <%= form.label :name,"Nombre del lote" %>
+    <%= text_field :lot,:name, id: :lot_name,class:"form-control"%>
   </div>
 
   <div class="field">
-    <%= form.label :location %>
-    <%= text_field :lot,:location, id: :lot_location %>
+    <%= form.label :location,"Ubicación"%>
+    <%= text_field :lot,:location, id: :lot_location,class:"form-control" %>
   </div>
 
   <div class="field">
     <%= hidden_field(:lot, :farm_id, value: @farm.id) %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Aceptar", {class:'btn btn-success right-button'} %>
   </div>
 <% end %>

@@ -1,0 +1,292 @@
+[33mcommit 3f0f1ab72da075120db3850dd74eb865bcf1b1b4[m
+Merge: 922e499 ef9517e
+Author: Julian Arango López <jarangol@eafit.edu.co>
+Date:   Mon Apr 30 09:24:24 2018 -0500
+
+    Merge pull request #7 from TuCultivo/plagasPlataforma
+    
+    Configuración de rutas
+
+[33mcommit ef9517ea665d3f5808a305b71fac26a324122d92[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Mon Apr 30 08:54:05 2018 -0500
+
+    Configuración de rutas
+
+[33mcommit 922e499adcc3ea81f660991f6b03fca23d485f1c[m
+Merge: cab96a4 7b32ddd
+Author: Julian Arango López <jarangol@eafit.edu.co>
+Date:   Sun Apr 29 23:47:06 2018 -0500
+
+    Merge pull request #6 from TuCultivo/plagasPlataforma
+    
+    Plagas plataforma
+
+[33mcommit 7b32dddbe15d5da204322154ff465b96d7fac055[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sun Apr 29 23:43:53 2018 -0500
+
+    Typo fixed
+
+[33mcommit 3e4f75a3f8fecd15b48296b45ca85db306339cfe[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sun Apr 29 23:41:48 2018 -0500
+
+    Modifying models for dependent destroys
+
+[33mcommit bbbbac62b30b6201391d0bd3f1fac9728688f8e8[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sun Apr 29 23:38:27 2018 -0500
+
+    Fixing bug on plague_reports
+
+[33mcommit 5562be1a2cffa77248b8b5ef81b1a8c89f715797[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sun Apr 29 23:32:21 2018 -0500
+
+    Recepcion de actualizaciones a los reportes de plagas
+
+[33mcommit cab96a493cdba8703ebd2cbc252e10ca91481575[m
+Merge: 35ed4f0 e7e04d2
+Author: Marcos Sierra <msierr37@eafit.edu.co>
+Date:   Sun Apr 29 09:49:10 2018 -0500
+
+    Merge pull request #5 from TuCultivo/plagasPlataforma
+    
+    Plagas plataforma
+
+[33mcommit e7e04d27c76cd854a4b3404c784efe9ee2825728[m
+Merge: 233a419 922e8c9
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sun Apr 29 09:42:51 2018 -0500
+
+    Merge branch 'plagasPlataforma' of github.com:TuCultivo/tuCultivo into plagasPlataforma
+
+[33mcommit 233a419b590310f133ca471225084cc7e00b993b[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sun Apr 29 09:42:38 2018 -0500
+
+    cuadrando vistas y peticion para reporte de plagas
+
+[33mcommit 922e8c9ed6882606edf7a47ee6f33598c123b638[m
+Author: msierr37 <msierr37@eafit.edu.co>
+Date:   Sun Apr 29 09:40:54 2018 -0500
+
+    Alertas para actuadores
+
+[33mcommit 35ed4f0a008c494bb0305e5f1e16d30a8758edae[m
+Merge: 6c40249 6097713
+Author: Marcos Sierra <msierr37@eafit.edu.co>
+Date:   Sat Apr 28 15:18:37 2018 -0500
+
+    Merge pull request #4 from TuCultivo/plagasPlataforma
+    
+    Actuadores
+
+[33mcommit 6097713a8045a3bbe36e77f9768e2e3dea4ec66b[m
+Author: msierr37 <msierr37@eafit.edu.co>
+Date:   Sat Apr 28 14:14:46 2018 -0500
+
+    Agregando actuadores
+
+[33mcommit 856c9e1d823b8be85f7f26b13fa8becf718af305[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Apr 28 13:16:30 2018 -0500
+
+    Fixing bug on deploy
+
+[33mcommit 0bf3ecc0b3031cda709d1743aa567c4313e6d88f[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Apr 28 13:12:26 2018 -0500
+
+    Adding user to farm model
+
+[33mcommit 820beada934075ac502d9717364e292bbbb3f0fc[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Apr 28 12:55:28 2018 -0500
+
+    fixing error with migrations on travis CI
+
+[33mcommit 6c40249c4fe3a303a43ce2ee31f45b9b5a6dedc5[m
+Merge: 8bb9348 f9fb3dc
+Author: Marcos Sierra <msierr37@eafit.edu.co>
+Date:   Sat Apr 28 11:57:42 2018 -0500
+
+    Merge pull request #3 from TuCultivo/plagasPlataforma
+    
+    Adding heroku api key
+
+[33mcommit f9fb3dc20429e4d7e4b9885c0f0788e72d1c8031[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Apr 28 11:55:16 2018 -0500
+
+    Adding heroku api key
+
+[33mcommit 8bb9348ec09dff6dedfdae4d85e8f8598cb6f282[m
+Merge: ddd734f f320b03
+Author: Marcos Sierra <msierr37@eafit.edu.co>
+Date:   Sat Apr 28 11:42:24 2018 -0500
+
+    Merge pull request #2 from TuCultivo/plagasPlataforma
+    
+    CI setup
+
+[33mcommit f320b03aefaec90bb89049224a9af0a432863035[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Apr 28 11:34:21 2018 -0500
+
+    Moviendo el build config file al root del proyecto
+
+[33mcommit 3a72a10527ad003b3a81faca0c93f3c07f07e2f5[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Apr 28 11:28:56 2018 -0500
+
+    Moviendo la app al root
+
+[33mcommit 0a143ec3334baf47a9fc42d6227b49f12aa03fd0[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Apr 28 11:16:20 2018 -0500
+
+    Añadiendo el deploy a heroku en el travis.yml
+
+[33mcommit ddd734f5582a5ec2ff7f081de34bbd6f14599a99[m
+Merge: b0e1952 e506448
+Author: Marcos Sierra <msierr37@eafit.edu.co>
+Date:   Sat Apr 28 10:58:03 2018 -0500
+
+    Merge pull request #1 from TuCultivo/plagasPlataforma
+    
+    Plagas plataforma
+
+[33mcommit e5064489410f4c1b86ac8fb99c1028c003c0688e[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Apr 28 10:47:32 2018 -0500
+
+    Creando el travis.yml
+
+[33mcommit f71f78b6dfa3d744cbb49e21af530dcdd5b265fb[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Apr 28 09:04:37 2018 -0500
+
+    Implementando gráficas de los reportes
+
+[33mcommit b9a1739051c688b079a6153f7fd9f2ae4544a374[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Fri Apr 27 11:22:40 2018 -0500
+
+    Graficando pie chart desde la db
+
+[33mcommit a9512343124ce8e7a8ec111fd05923a7ffea4e3d[m
+Author: msierr37 <msierr37@eafit.edu.co>
+Date:   Tue Apr 24 07:55:01 2018 -0500
+
+    Cambiando a español
+
+[33mcommit a6ebaa0241572dabd2ac807d288b7089b983e525[m
+Author: msierr37 <msierr37@eafit.edu.co>
+Date:   Mon Apr 23 15:21:34 2018 -0500
+
+    Mejorando navegación
+
+[33mcommit 50fa57c13437c2fd5ff26e9b475a47672ccf320f[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Apr 21 16:09:40 2018 -0500
+
+    Implementaando graficas
+
+[33mcommit caa31cc474cc7ceee83fe8d619bf8d6fe7349fd7[m
+Author: msierr37 <msierr37@eafit.edu.co>
+Date:   Sat Apr 21 14:30:38 2018 -0500
+
+    Implementando navegacion de funcionalidad de plagas
+
+[33mcommit ddb87a5e29565dfd178376dcf42496e34f891c85[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Apr 21 12:02:22 2018 -0500
+
+    Organizando navegación de la funcionalidad de plagas
+
+[33mcommit a950b41b75e7305693e5d0bfae0883e9dffe6e85[m
+Author: msierr37 <msierr37@eafit.edu.co>
+Date:   Sat Apr 21 10:45:12 2018 -0500
+
+    Enviando valores para modelo de ML
+
+[33mcommit b0e19520f4924934effdd5e7ebaa4dff401b4a37[m
+Author: Marcos Sierra <msierr37@eafit.edu.co>
+Date:   Mon Apr 16 12:31:09 2018 -0500
+
+    Eliminando archivos que no eran
+
+[33mcommit 38f3be04a5a6d9cff7b365fe7181380d0249d6cc[m
+Author: Marcos Sierra <msierr37@eafit.edu.co>
+Date:   Mon Apr 16 12:21:08 2018 -0500
+
+    Uniendo los dos repositorios de la materia
+
+[33mcommit 58a9c7f7e53d5355f134c169b8f7f0aab537faff[m
+Author: Marcos Sierra <msierr37@eafit.edu.co>
+Date:   Fri Mar 30 10:02:03 2018 -0500
+
+    Visualización de tablas
+
+[33mcommit 8495251369776ead09233817bfa1b1154839e7ef[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Mar 17 13:47:55 2018 -0500
+
+    Cuadrando rutas
+
+[33mcommit 9eae5dc29c7a5c5ff4bccdfb9c82b17e306494f2[m
+Author: Marcos Sierra <msierr37@eafit.edu.co>
+Date:   Thu Mar 15 14:15:58 2018 -0500
+
+    Midificando vistas
+
+[33mcommit 90d92e0d4471595d9d3e1f30d6beed001a088a49[m
+Author: Marcos Sierra <msierr37@eafit.edu.co>
+Date:   Sat Mar 10 11:37:24 2018 -0500
+
+    Realizando vistas
+
+[33mcommit b05a13752968052a1b5c4f4d86974811cd19eaa9[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Sat Mar 3 10:44:02 2018 -0500
+
+    Post para valores
+
+[33mcommit 5ab8de0b832d0c819186c6efcecdcbbde5e32a3b[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Thu Mar 1 13:46:15 2018 -0500
+
+    Deploying to heroku
+
+[33mcommit e6e4479a7c941d93a7c730a013f85e5147ff8958[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Thu Mar 1 10:34:59 2018 -0500
+
+    Creacion inicial de la base de datos
+
+[33mcommit 753b8941fc5ff79a30d3d9a3bb23c99ffc197497[m
+Author: Julian <jarangol@eafit.edu.co>
+Date:   Thu Mar 1 09:45:38 2018 -0500
+
+    Creando modelos iniciales
+
+[33mcommit 47de297eae36b37cc208e257fe299866e15f6627[m
+Merge: e203d17 6070d52
+Author: Mateo <hincapiemateo@gmail.com>
+Date:   Wed Feb 28 13:56:54 2018 -0500
+
+    Iniciando la página
+
+[33mcommit e203d172134730cd8fe186942b62245a258160a0[m
+Author: Mateo <hincapiemateo@gmail.com>
+Date:   Wed Feb 28 13:54:30 2018 -0500
+
+    Iniciando la página
+
+[33mcommit 6070d52385e9f342a111d9cbb5fa69d3772dd200[m
+Author: mhinca20 <hincapiemateo@gmail.com>
+Date:   Wed Feb 28 18:06:32 2018 +0000
+
+    Initial commit

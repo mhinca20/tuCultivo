@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180421143242) do
+ActiveRecord::Schema.define(version: 20180521184027) do
 
   create_table "collaborations", force: :cascade do |t|
     t.integer "node_id"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20180421143242) do
     t.integer "farm_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "key"
     t.index ["farm_id"], name: "index_lots_on_farm_id"
   end
 
@@ -54,7 +55,6 @@ ActiveRecord::Schema.define(version: 20180421143242) do
   end
 
   create_table "plague_reports", force: :cascade do |t|
-    t.integer "quantity"
     t.date "reportDate"
     t.text "description"
     t.integer "groove_id"
@@ -69,6 +69,14 @@ ActiveRecord::Schema.define(version: 20180421143242) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["node_id"], name: "index_sensors_on_node_id"
+  end
+
+  create_table "sick_plants", force: :cascade do |t|
+    t.integer "location"
+    t.integer "plague_report_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plague_report_id"], name: "index_sick_plants_on_plague_report_id"
   end
 
   create_table "users", force: :cascade do |t|

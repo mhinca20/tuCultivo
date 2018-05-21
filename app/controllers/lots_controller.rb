@@ -26,10 +26,14 @@ class LotsController < ApplicationController
   # POST /lots.json
   def create
     @lot = Lot.new(lot_params)
+    loop do
+      @lot.key = ([*('a'..'z'),*('A'..'Z'),*('0'..'9')]-%w()).sample(8).join
+      break unless Lot.exists?(key: @lot.key)
+    end
 
     respond_to do |format|
       if @lot.save
-        format.html { redirect_to farm_lots_path, notice: 'Lot was successfully created.' }
+        format.html { redirect_to farm_lots_path, notice: 'Lote creado satisfactoriamente.' }
         format.json { render :show, status: :created, location: @lot }
       else
         format.html { render :new }

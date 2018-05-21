@@ -12,11 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :farm_name %>
+    <%= form.label :name, "Nombre del cultivo" %>
+    <%= form.text_field :name, id: :farm_name,class:"form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit "Aceptar", {class:'btn btn-success right-button'} %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

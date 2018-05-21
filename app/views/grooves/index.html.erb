@@ -1,29 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="center">
+  <p id="notice"><%= notice %></p>
 
-<h1>Surcos del lote <%= @lot.name%></h1>
-<a class="btn-floating btn-large waves-effect waves-light green" <%= link_to '+', new_farm_lot_groofe_path %><i class="material-icons"></i></a>
-<td><%= link_to 'Volver', farm_lots_path %></td>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Cantidad de plantas</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h2>Surcos del lote: <%= @lot.name%></h2>
+  <h4>Identificador del lote: <%= @lot.id%></h4>
 
-  <tbody>
-    <% @grooves.each do |groofe| %>
-      <tr>
-        <td><%= groofe.id %></td>
-        <td><%= groofe.quantity %></td>
-        <td><%= link_to 'Ver reportes', farm_lot_groofe_plague_reports_path(groofe_id: groofe.id) %></td> 
-        <td><%= link_to 'Editar', edit_farm_lot_groofe_path(id: groofe.id) %></td>
-        <td><%= link_to 'Destruir', controller: "grooves", method: "destroy", data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <%= link_to 'Crear surco', new_farm_lot_groofe_path, {style:'color:#FFFFFF;',class:'btn btn-success right-button'} %>
+  <%= link_to 'Volver', farm_lots_path , {style:'color:#FFFFFF;',class:'btn btn-danger right-button'} %>
+  <% if @grooves.present? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Identificador</th>
+          <th>Cantidad de plantas</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-<br>
-
+      <tbody>
+        <% @grooves.each do |groofe| %>
+          <tr>
+            <td><%= groofe.id %></td>
+            <td><%= groofe.quantity %></td>
+            <td><%= link_to 'Ver reportes', farm_lot_groofe_plague_reports_path(groofe_id: groofe.id) %></td> 
+            <td><%= link_to 'Editar', edit_farm_lot_groofe_path(id: groofe.id) %></td>
+            <td><%= link_to 'Eliminar', controller: "grooves", method: "destroy", data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%if @show_lot%>
+      <%= render 'graphics/heatline_chart' %>
+    <%end%>
+  <%else%>
+    <p class="left">Usted no ha creado todavía ningun surco para este lote,
+     para hacerlo haga clic en "Crear Surco".</p>
+  <%end%>
+  <br>
+</div>

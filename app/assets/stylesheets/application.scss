@@ -12,4 +12,60 @@
  *
  */
 
-@import "materialize";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.navbar-inverse {
+    background-color:  #00b300;
+    border-color:  #00b300;
+    color:white;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+    color:white;
+}
+
+#logo{
+    color: white;
+}
+
+.white{
+    color: white;
+}
+
+.right-button{
+    float: right;
+}
+
+.right{
+    float: right;
+}
+
+.left{
+    float: left;
+}
+
+.center {
+    margin: auto;
+    width: 80%;
+    // padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%; 
+}
+
+#container {
+    min-width: 300px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%; 
+}
+
+.body, .html {
+    height: 100%;
+    position: fixed;
+ }
